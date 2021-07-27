@@ -1,6 +1,5 @@
 <template>
   <div id="app" ref="scrollBox">
-    fsadf
     <main-header />
     <!-- <div class="main-cnt">
       <side-nav class="nav" />

@@ -5,6 +5,9 @@
         <div class="logo">
           fdg
         </div>
+        <div class="logo">
+          fdg
+        </div>
       </div>
     </div>
   </header>

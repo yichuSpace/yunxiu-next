@@ -1,8 +1,8 @@
 {
-  "name": "yunxiu-ui-next",
+  "name": "yunxiu-next",
   "version": "0.0.1",
-  "description": "yunxiu-ui-next",
-  "main": "lib/yun-ui.common.js",
+  "description": "yunxiu-next",
+  "main": "lib/yunxiu.common.js",
   "license": "MIT",
   "private": false,
   "author": "奕初",
@@ -10,8 +10,8 @@
     "lib",
     "src"
   ],
-  "module": "lib/yun-ui.esm.js",
-  "unpkg": "lib/yun-ui.global.js",
+  "module": "lib/yunxiu.esm.js",
+  "unpkg": "lib/yunxiu.global.js",
   "style": "lib/styles/index.css",
   "scripts": {
     "commit": "git-cz",
@@ -72,7 +72,7 @@
     "style-loader": "^1.2.1",
     "transliteration": "^2.2.0",
     "url-loader": "^4.1.1",
-    "vue": "3.0.11",
+    "vue": "^3.1.4",
     "vue-loader": "^16.1.2",
     "vue-router": "^4.0.2",
     "webpack": "^5.42.1",
