@@ -118,7 +118,7 @@ if (isProd) {
     minChunks: 1, // 模块出现1次就会被抽离到公共模块
     maxAsyncRequests: 5, // 异步模块，一次最多只能被加载5个
     maxInitialRequests: 3, // 入口模块最多只能加载3个
-    name: true,
+    name: false,
     cacheGroups: {
       default: {
         minChunks: 2,
