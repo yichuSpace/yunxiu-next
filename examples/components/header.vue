@@ -20,9 +20,6 @@ export default {
     openSearch() {
       this.$refs.searchRef.handleOpen();
     },
-    handleCommand(name) {
-      this.$util.open(`https://github.com/wangbin3162/${name}`, true);
-    },
   },
 };
 </script>

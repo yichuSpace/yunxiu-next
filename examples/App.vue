@@ -1,6 +1,7 @@
 <template>
   <div id="app" ref="scrollBox">
     <main-header />
+    <main-footer />
     <!-- <div class="main-cnt">
       <side-nav class="nav" />
       <div class="page-container" ref="containerRef">
