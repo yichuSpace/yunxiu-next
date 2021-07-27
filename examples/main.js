@@ -4,6 +4,7 @@ import router from "./route";
 import App from "./App.vue";
 
 import MainHeader from "./components/header.vue";
+import MainFooter from "./components/footer.vue";
 
 import "./assets/styles/color-brewer.css";
 import "./assets/styles/index.scss";
@@ -24,7 +25,7 @@ app.config.productionTip = false;
 app.config.globalProperties.$generateTree = generate; // Icon 列表页用
 // app.component("DemoBlock", DemoBlock);
 app.component("MainHeader", MainHeader);
-// app.component("MainFooter", MainFooter);
+app.component("MainFooter", MainFooter);
 // app.component("SideNav", SideNav);
 // app.component("ColorBase", ColorBase);
 // app.component("DraggableDemo", DraggableDemo);
