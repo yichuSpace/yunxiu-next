@@ -72,7 +72,7 @@ const config = {
     extensions: [".js", ".vue", ".json"],
     alias: {
       vue: "vue",
-      "yun-ui-next": "../src/index.js",
+      "yunxiu-next": "../src/index.js",
       examples: path.resolve(__dirname),
     },
   },
@@ -92,11 +92,11 @@ const config = {
     inline: true,
     hot: true,
     stats: "minimal",
-    port: 8086,
+    port: 8088,
     publicPath: "/",
     contentBase: __dirname,
     overlay: true,
-    open: true,
+    open: false,
   },
   optimization: {
     splitChunks: {},

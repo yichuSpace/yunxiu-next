@@ -4,9 +4,10 @@
       <div class="left" style="width: 580px" flex="main:justify cross:center">
         <div class="logo">
           fdg
+          <yun-button></yun-button>
         </div>
         <div class="logo">
-          fdg
+          fdgasfd
         </div>
       </div>
     </div>

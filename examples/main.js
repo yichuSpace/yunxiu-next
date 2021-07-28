@@ -9,7 +9,7 @@ import MainFooter from "./components/footer.vue";
 import "./assets/styles/color-brewer.css";
 import "./assets/styles/index.scss";
 
-// import BinUI from "bin-ui-next";
+import YunUI from "yunxiu-next";
 // import "../src/styles/index.scss";
 
 // import icon from "../src/components/icon/iconfont.json";
@@ -18,7 +18,7 @@ import generate from "./generateTreeData";
 // const icons = icon.glyphs.map((i) => i.font_class);
 
 const app = createApp(App);
-// app.use(BinUI); // , { disabledDoc: true }
+app.use(YunUI); // , { disabledDoc: true }
 app.config.productionTip = false;
 // app.config.globalProperties.$icon = icons;
 
