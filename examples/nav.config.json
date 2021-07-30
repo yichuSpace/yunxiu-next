@@ -5,5 +5,24 @@
       "path": "/guide",
       "desc": "指南"
     }
+  ],
+  "组件": [
+    {
+      "desc": "基础",
+      "items": [
+        {
+          "desc": "Base 基础",
+          "icon": "appstore",
+          "name": "base",
+          "path": "/base"
+        },
+        {
+          "desc": "Button 按钮",
+          "icon": "Youtube",
+          "name": "button",
+          "path": "/button"
+        }
+      ]
+    }
   ]
 }

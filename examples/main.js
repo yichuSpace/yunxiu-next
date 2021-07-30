@@ -3,6 +3,7 @@ import { createApp } from "vue";
 import router from "./route";
 import App from "./App.vue";
 
+import DemoBlock from "./components/demo-block.vue";
 import MainHeader from "./components/header.vue";
 import MainFooter from "./components/footer.vue";
 
@@ -23,7 +24,7 @@ app.config.productionTip = false;
 // app.config.globalProperties.$icon = icons;
 
 app.config.globalProperties.$generateTree = generate; // Icon 列表页用
-// app.component("DemoBlock", DemoBlock);
+app.component("DemoBlock", DemoBlock);
 app.component("MainHeader", MainHeader);
 app.component("MainFooter", MainFooter);
 // app.component("SideNav", SideNav);
