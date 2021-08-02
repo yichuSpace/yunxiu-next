@@ -45,8 +45,8 @@ export default {
     },
     iconClass() {
       return this.isExpanded
-        ? "b-iconfont b-icon-caret-up"
-        : "b-iconfont b-icon-caret-down";
+        ? "yun-iconfont yun-icon-caret-up"
+        : "yun-iconfont yun-icon-caret-down";
     },
     codeAreaHeight() {
       if (this.$el.getElementsByClassName("description").length > 0) {

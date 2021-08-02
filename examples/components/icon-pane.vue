@@ -1,3 +1,48 @@
+<template>
+  <p>
+    收录了<span style="color:red;">{{ $icon.length }}</span
+    >个图标
+  </p>
+  <!-- <yun-alert type="error">点击复制图标名称，右键复制组件代码</yun-alert> -->
+  <ul class="icon-list">
+    <li
+      v-for="name in $icon"
+      :key="name"
+      class="list-complete-item"
+      @click="copy(name)"
+      @contextmenu.stop.prevent="copyComp(name)"
+    >
+      <span>
+        <i :class="['yun-iconfont', 'yun-icon-' + name]"></i>
+        <span class="icon-name">{{ name }}</span>
+      </span>
+    </li>
+  </ul>
+</template>
+
+<script>
+// import BAlert from "../../src/components/alert/alert";
+
+export default {
+  name: "icon-pane",
+  // components: { BAlert },
+  methods: {
+    copy(name) {
+      this.$copy(name);
+      // this.$message(`已复制图标名称【${name}】到剪切板`);
+      console.log(name);
+    },
+    copyComp(name) {
+      const str = `<yun-icon name="${name}"></yun-icon>`;
+      this.$copy(str);
+      // this.$message(`已复制图标 ${str} 代码至剪切板`);
+      console.log(str);
+    },
+  },
+};
+</script>
+
+<style lang="scss">
 .demo-block {
   .demo-icon {
     > i {
@@ -7,11 +52,10 @@
       vertical-align: middle;
     }
   }
-  .yun-button + .yun-button {
+  .bin-button + .bin-button {
     margin-left: 8px;
   }
 }
-
 #app .main-cnt .page-container {
   ul.icon-list {
     position: relative;
@@ -68,3 +112,4 @@
     }
   }
 }
+</style>

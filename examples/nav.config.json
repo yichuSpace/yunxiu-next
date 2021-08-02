@@ -21,6 +21,12 @@
           "icon": "Youtube",
           "name": "button",
           "path": "/button"
+        },
+        {
+          "desc": "Icon 图标",
+          "icon": "fire",
+          "name": "icon",
+          "path": "/icon"
         }
       ]
     }

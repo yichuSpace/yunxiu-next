@@ -17,7 +17,7 @@ module.exports = (plop) => {
       },
       {
         type: "add",
-        path: "src/components/{{name}}/{{name}}.js",
+        path: "src/components/{{name}}/index.js",
         templateFile: "plop-template/component/index.hbs",
       },
     ],
