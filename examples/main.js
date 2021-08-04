@@ -12,7 +12,8 @@ import "./assets/styles/color-brewer.css";
 import "./assets/styles/index.scss";
 
 import YunUI from "yunxiu-next";
-// import "../src/styles/index.scss";
+import "../src/styles/index.scss";
+import "../src/styles/normalize.scss";
 
 import icon from "../src/components/icon/iconfont.json";
 import generate from "./generateTreeData";

@@ -23,9 +23,10 @@ export default {
   },
 };
 </script>
-<style lang="scss" scoped>
+<style lang="scss">
+$btn-disable-color: #c5c8ce;
 .page-header {
   width: 100%;
-  color: red;
+  color: $btn-disable-color;
 }
 </style>

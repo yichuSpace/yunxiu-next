@@ -1,15 +1,22 @@
 <template>
-  <div>
+  <div class="alert">
+    \
+    <div class="alert-box">sadf</div>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'YunAlert',
-  props: {
-  }
-}
+  name: "YunAlert",
+  props: {},
+};
 </script>
 
-<style>
+<style lang="scss">
+.alert {
+  color: red;
+  &-box {
+    color: yellow;
+  }
+}
 </style>

@@ -29,6 +29,17 @@
           "path": "/icon"
         }
       ]
+    },
+    {
+      "desc": "反馈",
+      "items": [
+        {
+          "desc": "Alert 警告提示",
+          "icon": "error-fill",
+          "name": "alert",
+          "path": "/alert"
+        }
+      ]
     }
   ]
 }
