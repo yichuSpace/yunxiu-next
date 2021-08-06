@@ -38,6 +38,12 @@
           "icon": "error-fill",
           "name": "alert",
           "path": "/alert"
+        },
+        {
+          "desc": "Message 提示",
+          "icon": "message",
+          "name": "message",
+          "path": "/message"
         }
       ]
     }

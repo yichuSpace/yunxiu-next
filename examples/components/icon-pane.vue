@@ -3,15 +3,9 @@
     收录了<span style="color:red;">{{ $icon.length }}</span
     >个图标
   </p>
-  <yun-alert type="error">点击复制图标名称，右键复制组件代码</yun-alert>
+  <!-- <yun-alert type="error">点击复制图标名称，右键复制组件代码</yun-alert> -->
   <ul class="icon-list">
-    <li
-      v-for="name in $icon"
-      :key="name"
-      class="list-complete-item"
-      @click="copy(name)"
-      @contextmenu.stop.prevent="copyComp(name)"
-    >
+    <li v-for="name in $icon" :key="name" class="list-complete-item" @click="copy(name)" @contextmenu.stop.prevent="copyComp(name)">
       <span>
         <i :class="['yun-iconfont', 'yun-icon-' + name]"></i>
         <span class="icon-name">{{ name }}</span>
@@ -21,25 +15,25 @@
 </template>
 
 <script>
-import YunAlert from "../../src/components/alert/alert";
+import YunAlert from '../../src/components/alert/alert'
 
 export default {
-  name: "icon-pane",
+  name: 'icon-pane',
   components: { YunAlert },
   methods: {
     copy(name) {
-      this.$copy(name);
-      this.$message(`已复制图标名称【${name}】到剪切板`);
-      console.log(name);
+      this.$copy(name)
+      this.$message(`已复制图标名称【${name}】到剪切板`)
+      console.log(name)
     },
     copyComp(name) {
-      const str = `<yun-icon name="${name}"></yun-icon>`;
-      this.$copy(str);
-      this.$message(`已复制图标 ${str} 代码至剪切板`);
-      console.log(str);
+      const str = `<yun-icon name="${name}"></yun-icon>`
+      this.$copy(str)
+      this.$message(`已复制图标 ${str} 代码至剪切板`)
+      console.log(str)
     },
   },
-};
+}
 </script>
 
 <style lang="scss">
@@ -56,7 +50,7 @@ export default {
     margin-left: 8px;
   }
 }
-#app .main-cnt .page-container {
+#app .main-container .page-container {
   ul.icon-list {
     position: relative;
     overflow: hidden;
@@ -95,8 +89,7 @@ export default {
         display: inline-block;
         vertical-align: middle;
         line-height: normal;
-        font-family: Helvetica Neue, Helvetica, PingFang SC, Hiragino Sans GB,
-          Microsoft YaHei, SimSun, sans-serif;
+        font-family: Helvetica Neue, Helvetica, PingFang SC, Hiragino Sans GB, Microsoft YaHei, SimSun, sans-serif;
         color: #99a9bf;
         transition: color 0.15s linear;
       }
@@ -106,7 +99,7 @@ export default {
         height: 1em;
       }
       &:after {
-        content: "";
+        content: '';
         height: 100%;
       }
     }
