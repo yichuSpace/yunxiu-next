@@ -3,7 +3,7 @@
     收录了<span style="color:red;">{{ $icon.length }}</span
     >个图标
   </p>
-  <!-- <yun-alert type="error">点击复制图标名称，右键复制组件代码</yun-alert> -->
+  <yun-alert type="error">点击复制图标名称，右键复制组件代码</yun-alert>
   <ul class="icon-list">
     <li
       v-for="name in $icon"
@@ -21,21 +21,21 @@
 </template>
 
 <script>
-// import BAlert from "../../src/components/alert/alert";
+import YunAlert from "../../src/components/alert/alert";
 
 export default {
   name: "icon-pane",
-  // components: { BAlert },
+  components: { YunAlert },
   methods: {
     copy(name) {
       this.$copy(name);
-      // this.$message(`已复制图标名称【${name}】到剪切板`);
+      this.$message(`已复制图标名称【${name}】到剪切板`);
       console.log(name);
     },
     copyComp(name) {
       const str = `<yun-icon name="${name}"></yun-icon>`;
       this.$copy(str);
-      // this.$message(`已复制图标 ${str} 代码至剪切板`);
+      this.$message(`已复制图标 ${str} 代码至剪切板`);
       console.log(str);
     },
   },

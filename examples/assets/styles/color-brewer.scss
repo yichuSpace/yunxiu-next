@@ -45,8 +45,6 @@ Ported by Fabrício Tavares de Oliveira
   color: #88f;
 }
 
-
-
 .hljs-keyword,
 .hljs-selector-tag,
 .hljs-title,
@@ -68,4 +66,16 @@ Ported by Fabrício Tavares de Oliveira
 
 .hljs-attribute {
   color: #e6550d;
+}
+
+.hljs {
+  line-height: 1.5715;
+  font-family: Menlo, Monaco, Consolas, Courier, monospace;
+  font-size: 12px;
+  padding: 18px 24px;
+  background-color: #fafafa;
+  border: 1px solid #eaeefb;
+  margin-bottom: 25px;
+  border-radius: 4px;
+  -webkit-font-smoothing: auto;
 }
