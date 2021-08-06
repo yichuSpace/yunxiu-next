@@ -1,0 +1,8 @@
+{
+  "requireConfig": false,
+  "semi": false,
+  "singleQuote": true,
+  "endOfLine": "lf",
+  "trailingComma": "all",
+  "printWidth": 150
+}

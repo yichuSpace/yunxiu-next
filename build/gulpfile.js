@@ -1,14 +1,14 @@
 "use strict";
 // 单独打包css
 const { src, dest, series, task } = require("gulp");
-const stylus = require("gulp-stylus");
+const sass = require("gulp-sass");
 const autoprefixer = require("gulp-autoprefixer");
 const cssmin = require("gulp-cssmin");
 
 // 打包默认的
 function compile() {
   return src("../src/styles/*.scss")
-    .pipe(stylus())
+    .pipe(sass())
     .pipe(
       autoprefixer({
         overrideBrowserslist: ["ie > 9", "last 2 versions"],
@@ -22,7 +22,7 @@ function compile() {
 // 打包组件样式
 function compileComponents() {
   return src("../src/styles/components/*.scss")
-    .pipe(stylus())
+    .pipe(sass())
     .pipe(
       autoprefixer({
         overrideBrowserslist: ["ie > 9", "last 2 versions"],

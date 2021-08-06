@@ -24,8 +24,8 @@ module.exports = {
         [
           "module-resolver",
           {
-            root: ["yun-ui-next"],
-            alias: { "yun-ui-next/src": "yun-ui-next/lib" },
+            root: ["yunxiu-next"],
+            alias: { "yunxiu-next/src": "yunxiu-next/lib" },
           },
         ],
       ],

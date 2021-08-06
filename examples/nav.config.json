@@ -5,5 +5,41 @@
       "path": "/guide",
       "desc": "指南"
     }
+  ],
+  "组件": [
+    {
+      "desc": "基础",
+      "items": [
+        {
+          "desc": "Base 基础",
+          "icon": "appstore",
+          "name": "base",
+          "path": "/base"
+        },
+        {
+          "desc": "Button 按钮",
+          "icon": "Youtube",
+          "name": "button",
+          "path": "/button"
+        },
+        {
+          "desc": "Icon 图标",
+          "icon": "fire",
+          "name": "icon",
+          "path": "/icon"
+        }
+      ]
+    },
+    {
+      "desc": "反馈",
+      "items": [
+        {
+          "desc": "Alert 警告提示",
+          "icon": "error-fill",
+          "name": "alert",
+          "path": "/alert"
+        }
+      ]
+    }
   ]
 }
