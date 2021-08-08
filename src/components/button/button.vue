@@ -1,25 +1,16 @@
 <template>
-  <button @click="handleClick">
-    sdfazxczC
+  <button class="yun-button" @click="handleClick">
+    sdfazxczCsdgfdsg
   </button>
 </template>
 
 <script>
 export default {
-  name: "YunButton",
+  name: 'YunButton',
   props: {
     type: {
       type: String,
-      validator: (val) =>
-        [
-          "default",
-          "primary",
-          "success",
-          "warning",
-          "info",
-          "danger",
-          "text",
-        ].includes(val),
+      validator: val => ['default', 'primary', 'success', 'warning', 'info', 'danger', 'text'].includes(val),
     },
     size: {
       type: String,
@@ -37,21 +28,21 @@ export default {
     background: Boolean,
     animationType: {
       type: String,
-      validator: (val) => ["click", "waves"].includes(val),
-      default: "click",
+      validator: val => ['click', 'waves'].includes(val),
+      default: 'click',
     },
     textColor: String,
     nativeType: {
       type: String,
-      default: "button",
-      validator: (val) => ["button", "submit", "reset"].includes(val),
+      default: 'button',
+      validator: val => ['button', 'submit', 'reset'].includes(val),
     },
   },
-  emits: ["click"],
+  emits: ['click'],
   methods: {
     handleClick(e) {
-      this.$emit("click", e);
+      this.$emit('click', e)
     },
   },
-};
+}
 </script>

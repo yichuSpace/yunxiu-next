@@ -44,6 +44,12 @@
           "icon": "message",
           "name": "message",
           "path": "/message"
+        },
+        {
+          "desc": "Message 提示",
+          "icon": "tabs",
+          "name": "tabs",
+          "path": "/tabs"
         }
       ]
     }

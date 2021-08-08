@@ -1,3 +1,9 @@
-@import "./common/variables.scss";
-@import "base.scss";
-@import "icon.scss";
+@import './common/variables.scss';
+@import 'base.scss';
+@import 'icon.scss';
+
+@import 'components/alert/index.scss';
+@import 'components/button/index.scss';
+@import 'components/icon/index.scss';
+@import 'components/message/index.scss';
+@import 'components/scrollbar/index.scss';

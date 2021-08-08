@@ -25,6 +25,11 @@ module.exports = plop => {
         path: 'src/styles/components/{{name}}/index.scss',
         templateFile: 'plop-template/component/style.hbs',
       },
+      {
+        type: 'add',
+        path: 'examples/docs/{{name}}.md',
+        templateFile: 'plop-template/component/docs.hbs',
+      },
     ],
   })
 }
