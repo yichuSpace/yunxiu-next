@@ -4,5 +4,5 @@
   "singleQuote": true,
   "endOfLine": "lf",
   "trailingComma": "all",
-  "printWidth": 150
+  "printWidth": 120
 }

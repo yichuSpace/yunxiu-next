@@ -131,6 +131,7 @@ if (isProd) {
     },
   }
 }
+
 config.plugins.push(
   new webpack.DefinePlugin({
     __VUE_OPTIONS_API__: JSON.stringify(true),

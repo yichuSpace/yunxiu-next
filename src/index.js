@@ -1,22 +1,23 @@
-import YunButton from "./components/button";
-import YunIcon from "./components/icon";
-import YunAlert from "./components/alert";
-import config from "../package.json";
+import YunButton from './components/button'
+import YunIcon from './components/icon'
+import YunAlert from './components/alert'
+import YunMessage from './components/message'
+import config from '../package.json'
 
-const version = config.version; // version_ to fix tsc issue
+const version = config.version // version_ to fix tsc issue
 
-const components = [YunButton, YunIcon, YunAlert];
+const components = [YunButton, YunIcon, YunAlert, YunMessage]
 
 const install = function(app, options = {}) {
-  components.forEach((component) => {
-    app.use(component);
-  });
-  return app;
-};
+  components.forEach(component => {
+    app.use(component)
+  })
+  return app
+}
 
-export { YunButton, YunIcon, YunAlert };
+export { YunButton, YunIcon, YunAlert, YunMessage }
 
 export default {
   version,
   install,
-};
+}

@@ -1,15 +1,14 @@
 <template>
-  <div class="alert">
-    \
+  <div class="yun-alert">
     <div class="alert-box">sadf</div>
   </div>
 </template>
 
 <script>
 export default {
-  name: "YunAlert",
+  name: 'YunAlert',
   props: {},
-};
+}
 </script>
 
 <style lang="scss">
