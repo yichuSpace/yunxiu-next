@@ -10,12 +10,3 @@ export default {
   props: {},
 }
 </script>
-
-<style lang="scss">
-.alert {
-  color: red;
-  &-box {
-    color: yellow;
-  }
-}
-</style>

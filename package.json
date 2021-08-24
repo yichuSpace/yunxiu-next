@@ -1,6 +1,6 @@
 {
   "name": "yunxiu-next",
-  "version": "0.1.0-0",
+  "version": "0.1.0-alpha.1",
   "keywords": [
     "yunxiu-next",
     "yunxiu",
@@ -22,6 +22,7 @@
   "module": "lib/yunxiu.esm.js",
   "unpkg": "lib/yunxiu.global.js",
   "style": "lib/styles/index.css",
+  "homepage": "https://yichu-gitee.gitee.io/yunxiu-next",
   "scripts": {
     "commit": "git-cz",
     "dev": "webpack serve --config build/webpack.dev.js",
