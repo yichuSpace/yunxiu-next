@@ -1,43 +1,45 @@
-"use strict";
+'use strict'
 // 单独打包css
-const { src, dest, series, task } = require("gulp");
-const sass = require("gulp-sass");
-const autoprefixer = require("gulp-autoprefixer");
-const cssmin = require("gulp-cssmin");
+const { src, dest, series, task } = require('gulp')
+const sass = require('gulp-sass')
+const autoprefixer = require('gulp-autoprefixer')
+const rename = require('gulp-rename')
+const cssmin = require('gulp-cssmin')
 
 // 打包默认的
 function compile() {
-  return src("../src/styles/*.scss")
+  return src('../src/styles/index.scss')
     .pipe(sass())
     .pipe(
       autoprefixer({
-        overrideBrowserslist: ["ie > 9", "last 2 versions"],
+        overrideBrowserslist: ['ie > 9', 'last 2 versions'],
         cascade: false,
-      })
+      }),
     )
     .pipe(cssmin())
-    .pipe(dest("../lib/styles"));
+    .pipe(rename('yunxiu-next.css'))
+    .pipe(dest('../lib/styles'))
 }
 
 // 打包组件样式
 function compileComponents() {
-  return src("../src/styles/components/*.scss")
+  return src('../src/styles/components/**/*.scss')
     .pipe(sass())
     .pipe(
       autoprefixer({
-        overrideBrowserslist: ["ie > 9", "last 2 versions"],
+        overrideBrowserslist: ['ie > 9', 'last 2 versions'],
         cascade: false,
-      })
+      }),
     )
     .pipe(cssmin())
-    .pipe(dest("../lib/styles/components"));
+    .pipe(dest('../lib/styles/components'))
 }
 
 // 复制字体包
 function copyfont() {
-  return src("../src/styles/fonts/**")
+  return src('../src/styles/fonts/**')
     .pipe(cssmin())
-    .pipe(dest("../lib/styles/fonts"));
+    .pipe(dest('../lib/styles/fonts'))
 }
 
-task("default", series(copyfont, compile, compileComponents));
+task('default', series(copyfont, compile, compileComponents))

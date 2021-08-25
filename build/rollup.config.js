@@ -1,40 +1,40 @@
-import pkg from "../package.json";
-import vuePlugin from "rollup-plugin-vue";
-import path from "path";
-import peerDepsExternal from "rollup-plugin-peer-deps-external";
-import resolve from "@rollup/plugin-node-resolve";
-import commonjs from "@rollup/plugin-commonjs";
-import json from "@rollup/plugin-json";
-import replace from "@rollup/plugin-replace";
-import babel from "@rollup/plugin-babel";
-import { terser } from "rollup-plugin-terser";
+import pkg from '../package.json'
+import vuePlugin from 'rollup-plugin-vue'
+import path from 'path'
+import peerDepsExternal from 'rollup-plugin-peer-deps-external'
+import resolve from '@rollup/plugin-node-resolve'
+import commonjs from '@rollup/plugin-commonjs'
+import json from '@rollup/plugin-json'
+import replace from '@rollup/plugin-replace'
+import babel from '@rollup/plugin-babel'
+import { terser } from 'rollup-plugin-terser'
 
-const name = "Yunxiu";
+const name = 'YunxiuNext'
 
 const createBanner = () => {
   return `/*!
   * ${pkg.name} v${pkg.version}
   * (c) ${new Date().getFullYear()} 奕初
   * @license MIT
-  */`;
-};
+  */`
+}
 
 const createBaseConfig = () => {
   return {
-    input: path.resolve(__dirname, "../src/index.js"),
-    external: ["vue"],
+    input: path.resolve(__dirname, '../src/index.js'),
+    external: ['vue'],
     plugins: [
       peerDepsExternal(),
       vuePlugin({
         css: true,
       }),
       babel({
-        exclude: "node_modules/**",
-        extensions: [".js", ".jsx", ".vue"],
-        babelHelpers: "bundled",
+        exclude: 'node_modules/**',
+        extensions: ['.js', '.jsx', '.vue'],
+        babelHelpers: 'bundled',
       }),
       resolve({
-        extensions: [".vue", ".jsx", ".js"],
+        extensions: ['.vue', '.jsx', '.js'],
       }),
       commonjs(),
       json(),
@@ -44,27 +44,27 @@ const createBaseConfig = () => {
       banner: createBanner(),
       externalLiveBindings: false,
       globals: {
-        vue: "Vue",
+        vue: 'Vue',
       },
     },
-  };
-};
+  }
+}
 
 function mergeConfig(baseConfig, configB) {
-  const config = Object.assign({}, baseConfig);
+  const config = Object.assign({}, baseConfig)
   // plugin
   if (configB.plugins) {
-    baseConfig.plugins.push(...configB.plugins);
+    baseConfig.plugins.push(...configB.plugins)
   }
 
   // output
-  config.output = Object.assign({}, baseConfig.output, configB.output);
+  config.output = Object.assign({}, baseConfig.output, configB.output)
 
-  return config;
+  return config
 }
 
 function createFileName(formatName) {
-  return `lib/yunxiu.${formatName}.js`;
+  return `lib/yunxiu-next.${formatName}.js`
 }
 
 // es-bundle
@@ -75,10 +75,10 @@ const esBundleConfig = {
     }),
   ],
   output: {
-    file: createFileName("esm"),
-    format: "es",
+    file: createFileName('esm'),
+    format: 'es',
   },
-};
+}
 
 // es-browser
 const esBrowserConfig = {
@@ -88,10 +88,10 @@ const esBrowserConfig = {
     }),
   ],
   output: {
-    file: createFileName("esm-browser"),
-    format: "es",
+    file: createFileName('esm-browser'),
+    format: 'es',
   },
-};
+}
 
 // es-browser.prod
 const esBrowserProdConfig = {
@@ -102,10 +102,10 @@ const esBrowserProdConfig = {
     }),
   ],
   output: {
-    file: createFileName("esm-browser.prod"),
-    format: "es",
+    file: createFileName('esm-browser.prod'),
+    format: 'es',
   },
-};
+}
 
 // commonjs
 const cjsConfig = {
@@ -115,10 +115,10 @@ const cjsConfig = {
     }),
   ],
   output: {
-    file: createFileName("common"),
-    format: "cjs",
+    file: createFileName('common'),
+    format: 'cjs',
   },
-};
+}
 // cjs.prod
 const cjsProdConfig = {
   plugins: [
@@ -128,40 +128,40 @@ const cjsProdConfig = {
     }),
   ],
   output: {
-    file: createFileName("common.prod"),
-    format: "cjs",
+    file: createFileName('common.prod'),
+    format: 'cjs',
   },
-};
+}
 
 // global
 const globalConfig = {
   plugins: [
     replace({
       __DEV__: true,
-      "process.env.NODE_ENV": true,
+      'process.env.NODE_ENV': true,
     }),
   ],
   output: {
-    file: createFileName("global"),
-    format: "iife",
+    file: createFileName('global'),
+    format: 'iife',
     name,
   },
-};
+}
 // global.prod
 const globalProdConfig = {
   plugins: [
     terser(),
     replace({
       __DEV__: false,
-      "process.env.NODE_ENV": true,
+      'process.env.NODE_ENV': true,
     }),
   ],
   output: {
-    file: createFileName("global.prod"),
-    format: "iife",
+    file: createFileName('global.prod'),
+    format: 'iife',
     name,
   },
-};
+}
 
 const prodFormatConfigs = [
   esBundleConfig,
@@ -171,19 +171,17 @@ const prodFormatConfigs = [
   cjsProdConfig,
   globalConfig,
   globalProdConfig,
-];
-const devFormatConfigs = [esBundleConfig];
+]
+const devFormatConfigs = [esBundleConfig]
 
 function getFormatConfigs() {
-  return process.env.NODE_ENV === "development"
-    ? devFormatConfigs
-    : prodFormatConfigs;
+  return process.env.NODE_ENV === 'development' ? devFormatConfigs : prodFormatConfigs
 }
 
 function createPackageConfigs() {
-  return getFormatConfigs().map((formatConfig) => {
-    return mergeConfig(createBaseConfig(), formatConfig);
-  });
+  return getFormatConfigs().map(formatConfig => {
+    return mergeConfig(createBaseConfig(), formatConfig)
+  })
 }
 
-export default createPackageConfigs();
+export default createPackageConfigs()
