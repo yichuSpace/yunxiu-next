@@ -8,7 +8,7 @@ const cssmin = require('gulp-cssmin')
 
 // 打包默认的
 function compile() {
-  return src('../src/styles/index.scss')
+  return src('../src/styles/*.scss')
     .pipe(sass())
     .pipe(
       autoprefixer({
@@ -17,7 +17,6 @@ function compile() {
       }),
     )
     .pipe(cssmin())
-    .pipe(rename('yunxiu-next.css'))
     .pipe(dest('../lib/styles'))
 }
 
