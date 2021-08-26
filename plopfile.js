@@ -8,34 +8,6 @@ module.exports = plop => {
         message: 'component name',
         default: 'MyComponent',
       },
-      {
-        type: 'checkbox',
-        name: 'blocks',
-        message: 'Blocks:',
-        choices: [
-          {
-            name: 'state',
-            value: 'state',
-            checked: true,
-          },
-          {
-            name: 'mutations',
-            value: 'mutations',
-            checked: true,
-          },
-          {
-            name: 'actions',
-            value: 'actions',
-            checked: true,
-          },
-        ],
-        validate(value) {
-          if (!value.includes('state') || !value.includes('mutations')) {
-            return 'store require at least state and mutations'
-          }
-          return true
-        },
-      },
     ],
     actions: [
       {

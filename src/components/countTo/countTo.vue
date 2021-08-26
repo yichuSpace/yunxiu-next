@@ -137,6 +137,10 @@ export default {
       cancelAnimationFrame(this.rAF)
       this.displayValue = this.formatNumber(this.startVal)
     },
+    restart() {
+      this.reset()
+      this.start()
+    },
     count(timestamp) {
       if (!this.startTime) this.startTime = timestamp
       this.timestamp = timestamp
