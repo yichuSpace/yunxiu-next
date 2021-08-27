@@ -36,6 +36,17 @@
       ]
     },
     {
+      "desc": "布局",
+      "items": [
+        {
+          "desc": "Grid 栅格",
+          "icon": "layout",
+          "name": "grid",
+          "path": "/grid"
+        }
+      ]
+    },
+    {
       "desc": "表单",
       "items": [
         {
