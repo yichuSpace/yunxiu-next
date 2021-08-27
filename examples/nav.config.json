@@ -43,6 +43,12 @@
           "icon": "edit-square",
           "name": "input",
           "path": "/input"
+        },
+        {
+          "desc": "Form 表单",
+          "icon": "reconciliation",
+          "name": "form",
+          "path": "/form"
         }
       ]
     },

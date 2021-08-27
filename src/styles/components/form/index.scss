@@ -1,3 +1,261 @@
-.yun-form{
+@import '../../common/variables.scss';
 
+.yun-form {
+  &--label-left .yun-form-item__label {
+    text-align: left;
+  }
+  &--label-top .yun-form-item__label {
+    float: none;
+    text-align: left;
+    line-height: $base-line-height;
+  }
+  &--inline {
+    .yun-form-item {
+      display: inline-flex;
+      //margin-right: 8px;
+      + .yun-form-item {
+        margin-left: 8px;
+      }
+    }
+    .yun-form--label-top,
+    .yun-form--item__content {
+      display: block;
+    }
+  }
+}
+
+.yun-form-item {
+  margin-bottom: 20px;
+  &__label {
+    text-align: right;
+    float: left;
+    font-size: $base-font-size;
+    color: $color-text-primary;
+    line-height: $default-height;
+    min-height: $default-height;
+    box-sizing: border-box;
+    .item-suffix {
+      position: relative;
+      top: -0.5px;
+      margin: 0 8px 0 2px;
+    }
+  }
+  &__content {
+    position: relative;
+    font-size: $base-font-size;
+    min-height: $default-height;
+    .yun-checkbox-group,
+    .yun-radio-group {
+      padding-top: 4px;
+      line-height: $base-line-height;
+    }
+    .yun-radio-group.yun-radio-group-button {
+      padding-top: 0;
+    }
+    .yun-rate {
+      padding-top: 0;
+      line-height: $default-height;
+    }
+    .yun-switch {
+      margin-top: 6px;
+    }
+    .yun-slider-wrapper {
+      line-height: normal;
+      padding: 1px 0 0 8px;
+    }
+    > label,
+    > span {
+      line-height: $default-height;
+    }
+  }
+  &--large {
+    .yun-form-item__label {
+      line-height: $large-height;
+      min-height: $large-height;
+    }
+    .yun-form-item__content {
+      min-height: $large-height;
+      .yun-checkbox-group,
+      .yun-radio-group {
+        padding-top: 6px;
+      }
+      .yun-radio-group.yun-radio-group-button {
+        padding-top: 0;
+      }
+      .yun-rate {
+        padding-top: 2px;
+        line-height: $large-height;
+      }
+      .yun-switch {
+        margin-top: 8px;
+      }
+      .yun-slider-wrapper {
+        line-height: normal;
+        padding: 2px 0 0 8px;
+      }
+      > label,
+      > span {
+        line-height: $large-height;
+      }
+    }
+  }
+  &--small {
+    .yun-form-item__label {
+      line-height: $small-height;
+      min-height: $small-height;
+    }
+    .yun-form-item__content {
+      min-height: $small-height;
+      .yun-checkbox-group,
+      .yun-radio-group {
+        padding-top: 2px;
+      }
+      .yun-radio-group.yun-radio-group-button {
+        padding-top: 0;
+      }
+      .yun-rate {
+        padding-top: 2px;
+        line-height: $small-height;
+      }
+      .yun-switch {
+        margin-top: 4px;
+      }
+      .yun-slider-wrapper {
+        line-height: normal;
+        padding: 1px 0 0 8px;
+        .yun-slider__runway {
+          margin: 11px 0;
+        }
+      }
+      > label,
+      > span {
+        line-height: $small-height;
+      }
+    }
+  }
+  &--mini {
+    .yun-form-item__label {
+      line-height: $mini-height;
+      min-height: $mini-height;
+    }
+    .yun-form-item__content {
+      min-height: $mini-height;
+      .yun-checkbox-group,
+      .yun-radio-group {
+        padding-top: 0;
+      }
+      .yun-radio-group.yun-radio-group-button {
+        padding-top: 0;
+      }
+      .yun-rate {
+        padding-top: 0;
+        line-height: $mini-height;
+      }
+      .yun-switch {
+        margin-top: 2px;
+      }
+      .yun-slider-wrapper {
+        line-height: normal;
+        padding: 1px 0 0 8px;
+        .yun-slider__runway {
+          margin: 10px 0;
+        }
+      }
+      > label {
+        line-height: $mini-height;
+      }
+    }
+  }
+  &.is-required {
+    & > .yun-form-item__label:before,
+    & .yun-form-item__label-wrap > .yun-form-item__label:before {
+      content: '*';
+      display: inline-block;
+      margin-right: 4px;
+      line-height: $base-line-height;
+      font-family: SimSun;
+      font-size: $base-font-size;
+      color: $color-danger;
+    }
+    &.is-no-asterisk {
+      & > .yun-form-item__label:before,
+      & .yun-form-item__label-wrap > .yun-form-item__label:before {
+        display: none;
+      }
+    }
+  }
+  &__error {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    font-size: 12px;
+    line-height: 1;
+    padding-top: 4px;
+    color: $color-danger;
+  }
+  &__error--inline {
+    position: relative;
+    top: auto;
+    left: auto;
+    display: inline-block;
+    margin-left: 10px;
+  }
+  // 校验状态icon
+  .yun-input__validateIcon {
+    display: none;
+    height: 14px;
+    line-height: 1;
+    background-color: #fff;
+    &.b-icon-loading {
+      color: $color-primary;
+    }
+    &.b-icon-check-circle {
+      color: $color-success;
+    }
+    &.b-icon-close-circle {
+      color: $color-danger;
+    }
+  }
+  .yun-date-editor {
+    .b-icon-close-circle-fill {
+      z-index: 1;
+    }
+  }
+  .yun-input-wrapper .yun-input__validateIcon,
+  .yun-date-editor .yun-input__validateIcon,
+  .yun-select .yun-input__validateIcon,
+  .yun-cascader .yun-input__validateIcon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate3d(-50%, -50%, 0);
+  }
+  &.yun-form-item--feedback {
+    .yun-input__validateIcon {
+      display: block;
+    }
+  }
+}
+
+// 校验错误控件样式
+.yun-form-item.is-error {
+  .yun-input {
+    border: 1px solid $color-danger;
+    &:focus {
+      outline: 0;
+      box-shadow: 0 0 0 2px $color-input-error-shadow;
+    }
+  }
+
+  .yun-input-number {
+    border: 1px solid $color-danger;
+    &-focused {
+      border: 1px solid $color-danger;
+      outline: 0;
+      box-shadow: 0 0 0 2px $color-input-error-shadow;
+    }
+  }
+  .yun-range-editor.yun-input.is-active {
+    box-shadow: 0 0 0 2px $color-input-error-shadow;
+  }
 }

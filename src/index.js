@@ -4,12 +4,14 @@ import YunAlert from './components/alert'
 import YunMessage from './components/message'
 import YunCountTo from './components/countTo'
 import YunInput from './components/input'
+import YunForm from './components/form'
+import YunFormItem from './components/form-item'
 
 import config from '../package.json'
 
 const version = config.version // version_ to fix tsc issue
 
-const components = [YunButton, YunIcon, YunAlert, YunMessage, YunCountTo, YunInput]
+const components = [YunButton, YunIcon, YunAlert, YunMessage, YunCountTo, YunInput, YunForm, YunFormItem]
 
 const install = function(app, options = {}) {
   components.forEach(component => {
@@ -18,7 +20,7 @@ const install = function(app, options = {}) {
   return app
 }
 
-export { YunButton, YunIcon, YunAlert, YunMessage, YunCountTo, YunInput }
+export { YunButton, YunIcon, YunAlert, YunMessage, YunCountTo, YunInput, YunForm, YunFormItem }
 
 export default {
   version,
