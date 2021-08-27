@@ -1,10 +1,9 @@
 {
   "name": "yunxiu-next",
-  "version": "0.1.0-0",
+  "version": "0.1.0-alpha.1",
   "keywords": [
     "yunxiu-next",
     "yunxiu",
-    "bin",
     "ui",
     "vue",
     "vue3",
@@ -19,9 +18,10 @@
     "lib",
     "src"
   ],
-  "module": "lib/yunxiu.esm.js",
-  "unpkg": "lib/yunxiu.global.js",
-  "style": "lib/styles/index.css",
+  "module": "lib/yunxiu-next.esm.js",
+  "unpkg": "lib/yunxiu-next.global.js",
+  "style": "lib/styles/yunxiu-next.css",
+  "homepage": "https://yichu-gitee.gitee.io/yunxiu-next",
   "scripts": {
     "commit": "git-cz",
     "dev": "webpack serve --config build/webpack.dev.js",
@@ -40,7 +40,7 @@
     "color": "^3.1.3",
     "dayjs": "^1.10.4",
     "lodash": "^4.17.21",
-    "mitt": "^2.1.0",
+    "mitt": "^3.0.0",
     "resize-observer-polyfill": "^1.5.1",
     "sortablejs": "^1.10.2"
   },

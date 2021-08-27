@@ -4,6 +4,11 @@
       "name": "guide",
       "path": "/guide",
       "desc": "指南"
+    },
+    {
+      "name": "start",
+      "path": "/start",
+      "desc": "快速上手"
     }
   ],
   "组件": [
@@ -27,6 +32,28 @@
           "icon": "fire",
           "name": "icon",
           "path": "/icon"
+        }
+      ]
+    },
+    {
+      "desc": "表单",
+      "items": [
+        {
+          "desc": "Input 输入框",
+          "icon": "edit-square",
+          "name": "input",
+          "path": "/input"
+        }
+      ]
+    },
+    {
+      "desc": "视图",
+      "items": [
+        {
+          "desc": "CountTo 数字动画",
+          "icon": "orderedlist",
+          "name": "countTo",
+          "path": "/countTo"
         }
       ]
     },
