@@ -43,6 +43,12 @@
           "icon": "layout",
           "name": "grid",
           "path": "/grid"
+        },
+        {
+          "desc": "Divider 分割线",
+          "icon": "line",
+          "name": "divider",
+          "path": "/divider"
         }
       ]
     },

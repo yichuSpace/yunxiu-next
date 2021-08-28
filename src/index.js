@@ -8,6 +8,7 @@ import YunForm from './components/form'
 import YunFormItem from './components/form-item'
 import YunRow from './components/row'
 import YunCol from './components/col'
+import YunDivider from './components/divider'
 
 import config from '../package.json'
 
@@ -24,6 +25,7 @@ const components = [
   YunFormItem,
   YunRow,
   YunCol,
+  YunDivider,
 ]
 
 const install = function(app, options = {}) {
@@ -33,7 +35,19 @@ const install = function(app, options = {}) {
   return app
 }
 
-export { YunButton, YunIcon, YunAlert, YunMessage, YunCountTo, YunInput, YunForm, YunFormItem, YunRow, YunCol }
+export {
+  YunButton,
+  YunIcon,
+  YunAlert,
+  YunMessage,
+  YunCountTo,
+  YunInput,
+  YunForm,
+  YunFormItem,
+  YunRow,
+  YunCol,
+  YunDivider,
+}
 
 export default {
   version,

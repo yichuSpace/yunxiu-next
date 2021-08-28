@@ -1,20 +1,6 @@
 @import '../../common/variables.scss';
+@import '../../mixins/mixins';
 
-@mixin placeholder() {
-  // Firefox
-  &::-moz-placeholder {
-    color: $color-text-placeholder;
-    opacity: 1; // Override Firefox's unusual default opacity; see https://github.com/twbs/bootstrap/pull/11526
-  }
-  // Internet Explorer 10+
-  &:-ms-input-placeholder {
-    color: $color-text-placeholder;
-  }
-  // Safari and Chrome
-  &::-webkit-input-placeholder {
-    color: $color-text-placeholder;
-  }
-}
 .yun-input-wrapper {
   display: inline-block;
   vertical-align: middle;
