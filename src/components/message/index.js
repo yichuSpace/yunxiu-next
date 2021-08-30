@@ -1,7 +1,7 @@
-import YunMessage from './message.vue'
+import Message from './instance'
 
-YunMessage.install = Vue => {
-  Vue.component(YunMessage.name, YunMessage)
+Message.install = app => {
+  app.config.globalProperties.$message = Message
 }
 
-export default YunMessage
+export default Message
