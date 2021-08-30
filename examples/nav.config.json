@@ -96,10 +96,10 @@
           "path": "/message"
         },
         {
-          "desc": "Message 提示",
-          "icon": "tabs",
-          "name": "tabs",
-          "path": "/tabs"
+          "desc": "Notice 通知",
+          "icon": "notification",
+          "name": "notice",
+          "path": "/notice"
         }
       ]
     }

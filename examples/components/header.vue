@@ -34,6 +34,7 @@
             </b-dropdown-menu>
           </template>
         </b-dropdown> -->
+        <a href="https://gitee.com/yichu-gitee/yunxiu-next" class="github" target="_blank">国内镜像</a>
         <a href="https://github.com/yichuSpace/yunxiu-next" class="github" target="_blank">GitHub</a>
       </div>
       <!-- <search ref="searchRef"></search> -->
@@ -49,13 +50,13 @@ export default {
   // components: { Search },
   methods: {
     openSearch() {
-      this.$refs.searchRef.handleOpen();
+      this.$refs.searchRef.handleOpen()
     },
     handleCommand(name) {
-      this.$util.open(`https://github.com/yichuSpace/${name}`, true);
-    }
-  }
-};
+      this.$util.open(`https://github.com/yichuSpace/${name}`, true)
+    },
+  },
+}
 </script>
 
 <style lang="scss" scoped>
@@ -130,11 +131,11 @@ export default {
       }
     }
   }
-  :deep(.bin-select) {
-    .bin-input.bin-input-default {
+  :deep(.yun-select) {
+    .yun-input.yun-input-default {
       border-color: transparent;
     }
-    .bin-input-suffix {
+    .yun-input-suffix {
       opacity: 0;
     }
   }
