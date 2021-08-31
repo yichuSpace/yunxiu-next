@@ -18,7 +18,7 @@ import 'yunxiu-next/lib/styles/index.css'
 
 const app = createApp(App)
 app.use(YunUI)
-// app.use(BinUI,{disabledDoc:true}) // 可以设置禁用doc地址log
+// app.use(YunUI,{disabledDoc:true}) // 可以设置禁用doc地址log
 app.mount('#app')
 ```
 

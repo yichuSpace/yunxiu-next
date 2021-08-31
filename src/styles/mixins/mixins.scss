@@ -41,16 +41,16 @@
   @for $i from 0 through 24 {
     .yun-col-span#{$class}-#{$i} {
       display: block;
-      width: percentage(math.div($i, 24));
+      width: percentage(($i / 24));
     }
     .yun-col#{$class}-push-#{$i} {
-      left: percentage(math.div($i, 24));
+      left: percentage(($i / 24));
     }
     .yun-col#{$class}-pull-#{$i} {
-      right: percentage(math.div($i, 24));
+      right: percentage(($i / 24));
     }
     .yun-col#{$class}-offset-#{$i} {
-      margin-left: percentage(math.div($i, 24));
+      margin-left: percentage(($i / 24));
     }
     .yun-col#{$class}-order-#{$i} {
       order: $i;

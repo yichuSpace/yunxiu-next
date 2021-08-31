@@ -1,6 +1,6 @@
 {
   "name": "yunxiu-next",
-  "version": "0.1.0-alpha.1",
+  "version": "0.1.0-alpha.2",
   "keywords": [
     "yunxiu-next",
     "yunxiu",
@@ -25,11 +25,11 @@
   "scripts": {
     "commit": "git-cz",
     "dev": "webpack serve --config build/webpack.dev.js",
+    "build": "yarn clean-lib && yarn build:lib && yarn build:style && yarn build:demo",
     "build:demo": "rimraf docs && cross-env NODE_ENV=production webpack --config build/webpack.dev.js",
-    "build": "yarn clean-lib && yarn build:lib && yarn build:style",
-    "clean-lib": "rimraf lib",
     "build:lib": "rollup --config ./build/rollup.config.js",
     "build:style": "gulp --gulpfile ./build/gulpfile.js",
+    "clean-lib": "rimraf lib",
     "lint": "eslint ./src --ext .vue,.js,.ts",
     "lint-fix": "eslint --fix ./src --ext .vue,.js,.ts",
     "plop": "plop"
