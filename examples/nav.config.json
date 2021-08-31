@@ -36,6 +36,23 @@
       ]
     },
     {
+      "desc": "布局",
+      "items": [
+        {
+          "desc": "Grid 栅格",
+          "icon": "layout",
+          "name": "grid",
+          "path": "/grid"
+        },
+        {
+          "desc": "Divider 分割线",
+          "icon": "line",
+          "name": "divider",
+          "path": "/divider"
+        }
+      ]
+    },
+    {
       "desc": "表单",
       "items": [
         {
@@ -43,6 +60,12 @@
           "icon": "edit-square",
           "name": "input",
           "path": "/input"
+        },
+        {
+          "desc": "Form 表单",
+          "icon": "reconciliation",
+          "name": "form",
+          "path": "/form"
         }
       ]
     },
@@ -73,10 +96,10 @@
           "path": "/message"
         },
         {
-          "desc": "Message 提示",
-          "icon": "tabs",
-          "name": "tabs",
-          "path": "/tabs"
+          "desc": "Notice 通知",
+          "icon": "notification",
+          "name": "notice",
+          "path": "/notice"
         }
       ]
     }

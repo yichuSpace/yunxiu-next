@@ -1,10 +1,40 @@
 <template>
-  <div>
-    sdf
-  </div>
+  <transition name="yun-message-fade">
+    <div
+      v-show="visible"
+      :id="id"
+      :class="[
+        'yun-message',
+        type && !iconClass ? `yun-message--${type}` : '',
+        showClose ? 'is-closable' : '',
+        customClass,
+      ]"
+      :style="customStyle"
+      role="alert"
+      @mouseenter="clearTimer"
+      @mouseleave="startTimer"
+    >
+      <i v-if="type || iconClass" :class="[typeClass, iconClass]"></i>
+      <slot>
+        <p v-if="!useHTML" class="yun-message__content">
+          {{ message }}
+        </p>
+        <p v-else class="yun-message__content" v-html="message"></p>
+      </slot>
+      <div v-if="showClose" class="yun-iconfont yun-icon-close" @click.stop="close"></div>
+    </div>
+  </transition>
 </template>
 
 <script>
+import { EVENT_CODE } from '../../utils/aria'
+import { on, off } from '../../utils/dom'
+const TypeMap = {
+  info: 'info-circle-fill',
+  success: 'check-circle-fill',
+  warning: 'warning-circle-fill',
+  error: 'close-circle-fill',
+}
 export default {
   name: 'YunMessage',
   props: {
@@ -33,10 +63,10 @@ export default {
     }
   },
   computed: {
-    // typeClass() {
-    //   const type = this.type
-    //   return type && TypeMap[type] ? `bin-message__icon b-iconfont b-icon-${TypeMap[type]} is-${type}` : ''
-    // },
+    typeClass() {
+      const type = this.type
+      return type && TypeMap[type] ? `yun-message__icon yun-iconfont yun-icon-${TypeMap[type]} is-${type}` : ''
+    },
     customStyle() {
       return {
         top: `${this.offset}px`,
@@ -48,11 +78,54 @@ export default {
     closed(newVal) {
       if (newVal) {
         this.visible = false
-        // on(this.$el, 'transitionend', this.destroyElement)
+        on(this.$el, 'transitionend', this.destroyElement)
+      }
+    },
+  },
+  mounted() {
+    this.startTimer()
+    this.visible = true
+    on(document, 'keydown', this.keydown)
+  },
+  beforeUnmount() {
+    off(document, 'keydown', this.keydown)
+  },
+  methods: {
+    destroyElement() {
+      this.visible = false
+      off(this.$el, 'transitionend', this.destroyElement)
+      this.onClose()
+    },
+    // start counting down to destroy message instance
+    startTimer() {
+      if (this.duration > 0) {
+        this.timer = setTimeout(() => {
+          if (!this.closed) {
+            this.close()
+          }
+        }, this.duration * 1000)
+      }
+    },
+    // clear timer
+    clearTimer() {
+      clearTimeout(this.timer)
+      this.timer = null
+    },
+    // Event handlers
+    close() {
+      this.closed = true
+      this.timer = null
+    },
+    keydown({ code }) {
+      if (code === EVENT_CODE.esc) {
+        // press esc to close the message
+        if (!this.closed) {
+          this.close()
+        }
+      } else {
+        this.startTimer() // resume timer
       }
     },
   },
 }
 </script>
-
-<style></style>
