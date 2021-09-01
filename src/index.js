@@ -3,11 +3,13 @@ import YunIcon from './components/icon'
 import YunAlert from './components/alert'
 import YunCountTo from './components/countTo'
 import YunInput from './components/input'
+import YunInputNumber from './components/input-number'
 import YunForm from './components/form'
 import YunFormItem from './components/form-item'
 import YunRow from './components/row'
 import YunCol from './components/col'
 import YunDivider from './components/divider'
+import YunLoading from './components/loading'
 
 import Notice from './components/notice'
 import Message from './components/message'
@@ -33,11 +35,13 @@ const components = [
   YunAlert,
   YunCountTo,
   YunInput,
+  YunInputNumber,
   YunForm,
   YunFormItem,
   YunRow,
   YunCol,
   YunDivider,
+  YunLoading,
 ]
 const plugins = [Message, Notice]
 
@@ -67,11 +71,13 @@ export {
   Message,
   YunCountTo,
   YunInput,
+  YunInputNumber,
   YunForm,
   YunFormItem,
   YunRow,
   YunCol,
   YunDivider,
+  YunLoading,
   Notice,
   Utils,
 }

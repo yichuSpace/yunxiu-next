@@ -53,6 +53,17 @@
       ]
     },
     {
+      "desc": "视图",
+      "items": [
+        {
+          "desc": "Loading 加载",
+          "icon": "loading2",
+          "name": "loading",
+          "path": "/loading"
+        }
+      ]
+    },
+    {
       "desc": "表单",
       "items": [
         {
@@ -60,6 +71,12 @@
           "icon": "edit-square",
           "name": "input",
           "path": "/input"
+        },
+        {
+          "desc": "InputNumber 数字输入",
+          "icon": "shake",
+          "name": "inputNumber",
+          "path": "/inputNumber"
         },
         {
           "desc": "Form 表单",
