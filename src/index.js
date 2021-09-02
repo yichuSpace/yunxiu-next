@@ -10,6 +10,7 @@ import YunRow from './components/row'
 import YunCol from './components/col'
 import YunDivider from './components/divider'
 import YunLoading from './components/loading'
+import YunAffix from './components/affix'
 
 import Notice from './components/notice'
 import Message from './components/message'
@@ -42,6 +43,7 @@ const components = [
   YunCol,
   YunDivider,
   YunLoading,
+  YunAffix,
 ]
 const plugins = [Message, Notice]
 
@@ -78,6 +80,7 @@ export {
   YunCol,
   YunDivider,
   YunLoading,
+  YunAffix,
   Notice,
   Utils,
 }

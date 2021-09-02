@@ -1,0 +1,147 @@
+<template>
+  <div ref="root" class="yun-affix" :style="rootStyle">
+    <div :class="{ 'yun-affix--fixed': state.fixed }" :style="affixStyle">
+      <slot></slot>
+    </div>
+  </div>
+</template>
+
+<script>
+import { computed, onBeforeUnmount, onMounted, reactive, ref, watch } from 'vue'
+import { off, on } from '../../utils/dom'
+import { addResizeListener, removeResizeListener } from '../../utils/resizeEvent'
+
+export default {
+  name: 'YunAffix',
+  props: {
+    zIndex: {
+      type: Number,
+      default: 10,
+    },
+    target: {
+      type: String,
+      default: '',
+    },
+    offset: {
+      type: Number,
+      default: 0,
+    },
+    position: {
+      type: String,
+      default: 'top',
+    },
+  },
+  emits: ['scroll', 'change'],
+  setup(props, { emit }) {
+    const target = ref(null)
+    const root = ref(null)
+    const scrollContainer = ref(null)
+
+    const state = reactive({
+      fixed: false,
+      height: 0, // height of root
+      width: 0, // width of root
+      scrollTop: 0, // scrollTop of documentElement
+      clientHeight: 0, // clientHeight of documentElement
+      transform: 0,
+    })
+
+    const rootStyle = computed(() => {
+      return {
+        height: state.fixed ? `${state.height}px` : '',
+        width: state.fixed ? `${state.width}px` : '',
+      }
+    })
+
+    const affixStyle = computed(() => {
+      if (!state.fixed) {
+        return
+      }
+      const offset = props.offset ? `${props.offset}px` : 0
+      const transform = state.transform ? `translateY(${state.transform}px)` : ''
+
+      return {
+        height: `${state.height}px`,
+        width: `${state.width}px`,
+        top: props.position === 'top' ? offset : '',
+        bottom: props.position === 'bottom' ? offset : '',
+        transform: transform,
+        zIndex: props.zIndex,
+      }
+    })
+
+    const updateState = () => {
+      const rootRect = root.value.getBoundingClientRect()
+      const targetRect = target.value.getBoundingClientRect()
+      state.height = rootRect.height
+      state.width = rootRect.width
+      state.scrollTop =
+        scrollContainer.value === window ? document.documentElement.scrollTop : scrollContainer.value.scrollTop
+      state.clientHeight = document.documentElement.clientHeight
+
+      if (props.position === 'top') {
+        if (target.value) {
+          const difference = targetRect.bottom - props.offset - state.height
+          state.fixed = props.offset > rootRect.top && targetRect.bottom > 0
+          state.transform = difference < 0 ? difference : 0
+        } else {
+          state.fixed = props.offset > rootRect.top
+        }
+      } else {
+        if (target.value) {
+          const difference = state.clientHeight - targetRect.top - props.offset - state.height
+          state.fixed = state.clientHeight - props.offset < rootRect.bottom && state.clientHeight > targetRect.top
+          state.transform = difference < 0 ? -difference : 0
+        } else {
+          state.fixed = state.clientHeight - props.offset < rootRect.bottom
+        }
+      }
+    }
+
+    const onScroll = () => {
+      updateState()
+
+      emit('scroll', {
+        scrollTop: state.scrollTop,
+        fixed: state.fixed,
+      })
+    }
+
+    watch(
+      () => state.fixed,
+      () => {
+        emit('change', state.fixed)
+      },
+    )
+
+    onMounted(() => {
+      if (props.target) {
+        target.value = document.querySelector(props.target)
+        if (!target.value) {
+          throw new Error(`target is not existed: ${props.target}`)
+        }
+      } else {
+        target.value = document.documentElement
+      }
+      scrollContainer.value = [window, document, document.documentElement].includes(target.value)
+        ? window
+        : target.value
+
+      on(scrollContainer.value, 'scroll', onScroll)
+      addResizeListener(root.value, updateState)
+    })
+
+    onBeforeUnmount(() => {
+      off(scrollContainer.value, 'scroll', onScroll)
+      removeResizeListener(root.value, updateState)
+    })
+
+    return {
+      root,
+      state,
+      rootStyle,
+      affixStyle,
+    }
+  },
+}
+</script>
