@@ -22,6 +22,11 @@
 const prefixCls = 'yun-loading'
 export default {
   name: 'YunLoading',
+  data() {
+    return {
+      text: this.showText,
+    }
+  },
   props: {
     showIcon: String,
     showText: String,
@@ -46,11 +51,6 @@ export default {
         fontSize: `${this.size}px`,
       }
     },
-  },
-  data() {
-    return {
-      text: this.showText,
-    }
   },
   methods: {
     setTitle(title) {

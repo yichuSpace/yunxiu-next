@@ -77,7 +77,7 @@
         <yun-button type="danger" @click="loading1=false">停止</yun-button>
       </div>
     </div>
-    <div>
+    <!-- <div>
       <p>指令调用</p>
       <div class="demo-loading" v-loading:[loadingText]="loading2">
         <div>我是后面的段落我是后面的段落我是后面的段落我是后面的段落</div>
@@ -86,7 +86,7 @@
         <yun-button @click="loading2=true">加载</yun-button>
         <yun-button type="danger" @click="loading2=false">停止</yun-button>
       </div>
-    </div>
+    </div> -->
   </div>
 </template>
 <script>
