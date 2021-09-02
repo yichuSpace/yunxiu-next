@@ -11,6 +11,8 @@ import YunCol from './components/col'
 import YunDivider from './components/divider'
 import YunLoading from './components/loading'
 import YunAffix from './components/affix'
+import YunAnchor from './components/anchor'
+import YunAnchorLink from './components/anchor-link'
 
 import Notice from './components/notice'
 import Message from './components/message'
@@ -44,6 +46,8 @@ const components = [
   YunDivider,
   YunLoading,
   YunAffix,
+  YunAnchor,
+  YunAnchorLink,
 ]
 const plugins = [Message, Notice]
 
@@ -81,6 +85,8 @@ export {
   YunDivider,
   YunLoading,
   YunAffix,
+  YunAnchor,
+  YunAnchorLink,
   Notice,
   Utils,
 }

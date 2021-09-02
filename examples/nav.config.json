@@ -60,6 +60,12 @@
           "icon": "pushpin",
           "name": "affix",
           "path": "/affix"
+        },
+        {
+          "desc": "Anchor 锚点",
+          "icon": "attachment",
+          "name": "anchor",
+          "path": "/anchor"
         }
       ]
     },
