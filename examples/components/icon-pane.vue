@@ -3,9 +3,15 @@
     收录了<span style="color:red;">{{ $icon.length }}</span
     >个图标
   </p>
-  <!-- <yun-alert type="error">点击复制图标名称，右键复制组件代码</yun-alert> -->
+  <yun-alert type="error">点击复制图标名称，右键复制组件代码</yun-alert>
   <ul class="icon-list">
-    <li v-for="name in $icon" :key="name" class="list-complete-item" @click="copy(name)" @contextmenu.stop.prevent="copyComp(name)">
+    <li
+      v-for="name in $icon"
+      :key="name"
+      class="list-complete-item"
+      @click="copy(name)"
+      @contextmenu.stop.prevent="copyComp(name)"
+    >
       <span>
         <i :class="['yun-iconfont', 'yun-icon-' + name]"></i>
         <span class="icon-name">{{ name }}</span>

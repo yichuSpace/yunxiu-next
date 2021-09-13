@@ -1,0 +1,409 @@
+// 这块是为了覆盖文档的样式，后期文档整理再删除
+.yun-table {
+  table {
+    width: auto;
+    border-collapse: separate;
+    overflow: auto;
+    border: none;
+    color: var(--yun-color-text-default);
+    font-size: var(--yun-base-font-size);
+    thead,
+    tbody {
+      width: auto;
+    }
+  }
+  th,
+  td {
+    padding: 0;
+    max-width: unset;
+    border: none;
+  }
+  th {
+    background-color: var(--yun-color-bg-fa);
+  }
+}
+.yun-table {
+  user-select: text;
+  color: var(--yun-color-text-default);
+  font-size: var(--yun-base-font-size);
+  width: inherit;
+  height: 100%;
+  max-width: 100%;
+  overflow: hidden;
+  background-color: var(--yun-color-white);
+  box-sizing: border-box;
+  &-wrapper {
+    position: relative;
+    border-bottom: 0;
+    border-right: 0;
+    overflow: hidden; // 开启 max-height 时，没有 overflow: hidden，则底部多出 1px，早期没有 overflow 是因为有些控件没有加 transfer
+  }
+  &-hide {
+    opacity: 0;
+  }
+  &:before {
+    content: '';
+    display: none;
+    width: 100%;
+    height: 1px;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    background-color: var(--yun-border-table-color);
+    z-index: 1;
+  }
+
+  &:after {
+    content: '';
+    display: none;
+    width: 1px;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: var(--yun-border-table-color);
+    z-index: 3;
+  }
+  &-title,
+  &-footer {
+    height: 48px;
+    line-height: 48px;
+    border-bottom: var(--yun-border-table);
+  }
+  &-footer {
+    border-bottom: none;
+  }
+  &-header {
+    overflow: hidden;
+  }
+  &-overflowX {
+    overflow-x: scroll;
+  }
+  &-overflowY {
+    overflow-y: scroll;
+  }
+  &-tip {
+    overflow-x: auto;
+    overflow-y: hidden;
+  }
+  &-with-fixed-top:before {
+    display: block;
+  }
+  &-with-fixed-top &-with-footer {
+    .yun-table-footer {
+      border-top: var(--yun-border-table);
+    }
+    tbody tr:last-child td {
+      border-bottom: none;
+    }
+  }
+  th,
+  td {
+    min-width: 0;
+    height: 50px;
+    box-sizing: border-box;
+    text-align: left;
+    text-overflow: ellipsis;
+    vertical-align: middle;
+    border-bottom: var(--yun-border-table);
+  }
+
+  th {
+    height: 50px;
+    white-space: nowrap;
+    overflow: hidden;
+    background-color: var(--yun-color-bg-fa);
+    color: var(--yun-color-text-primary);
+    font-weight: 500;
+  }
+  td {
+    word-break: break-all;
+    background-color: #fff;
+    transition: background-color var(--yun-animation-duration-base) ease-in-out;
+  }
+  th &-column,
+  td &-column {
+    &-left {
+      text-align: left;
+    }
+    &-center {
+      text-align: center;
+    }
+    &-right {
+      text-align: right;
+    }
+  }
+  & table {
+    table-layout: fixed;
+  }
+  &-wrapper-with-border {
+    &:before,
+    &:after {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      background-color: var(--yun-border-table-color);
+    }
+    &:before {
+      height: 100%;
+      width: 1px;
+    }
+    &:after {
+      height: 1px;
+      width: 100%;
+    }
+  }
+  &-border {
+    &:before,
+    &:after {
+      display: block;
+    }
+    th,
+    td {
+      border-right: var(--yun-border-table);
+    }
+  }
+  &-cell {
+    padding: 0 16px;
+    box-sizing: border-box;
+    color: var(--yun-color-text-default);
+    white-space: normal;
+    line-height: 24px;
+
+    &-ellipsis {
+      word-break: keep-all;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    &-tooltip {
+      width: 100%;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      &-content {
+        word-break: break-all;
+        display: block;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        line-height: 24px;
+      }
+    }
+
+    &-with-expand {
+      height: 47px;
+      line-height: 47px;
+      padding: 0;
+      text-align: center;
+    }
+
+    &-expand {
+      cursor: pointer;
+      transition: transform var(--yun-animation-duration-base) ease-in-out;
+      i {
+        font-size: var(--yun-base-font-size);
+      }
+      &-expanded {
+        transform: rotate(90deg);
+      }
+    }
+    &-sort {
+      cursor: pointer;
+      user-select: none;
+    }
+
+    // #3159
+    &-with-selection {
+      .yun-checkbox-wrapper,
+      .yun-checkbox {
+        margin: 0;
+      }
+    }
+  }
+  &-hidden {
+    visibility: hidden;
+  }
+  th .yun-table-cell {
+    display: inline-block;
+    word-wrap: normal;
+    vertical-align: middle;
+  }
+  td &-expanded-cell {
+    padding: 20px 50px;
+  }
+  &-stripe &-body,
+  &-stripe &-fixed-body {
+    tr:nth-child(2n) {
+      td {
+        background-color: var(--yun-color-bg-fa);
+      }
+    }
+    // #1380
+    tr.yun-table-row-hover {
+      td {
+        background-color: var(--yun-color-primary-light5);
+      }
+    }
+  }
+
+  tr &-row-hover {
+    td {
+      background-color: var(--yun-color-primary-light5);
+    }
+  }
+
+  &-large {
+    font-size: var(--yun-base-font-size);
+    td {
+      height: 55px;
+    }
+    &-title,
+    &-footer {
+      height: 55px;
+      line-height: 55px;
+    }
+    .yun-table-cell-with-expand {
+      height: 55px;
+      line-height: 55px;
+      i {
+        font-size: 16px;
+      }
+    }
+  }
+
+  &-small {
+    th {
+      height: 40px;
+    }
+    td {
+      height: 40px;
+    }
+    &-title,
+    &-footer {
+      height: 40px;
+      line-height: 40px;
+    }
+    .yun-table-cell-with-expand {
+      height: 39px;
+      line-height: 39px;
+    }
+  }
+
+  &-row-highlight,
+  tr &-row-highlight &-row-hover,
+  &-stripe &-body tr &-row-highlight:nth-child(2n),
+  &-stripe &-fixed-body tr &-row-highlight:nth-child(2n) {
+    td {
+      background-color: var(--yun-color-primary-light5);
+    }
+  }
+
+  &-fixed,
+  &-fixed-right {
+    position: absolute;
+    top: 0;
+    left: 0;
+    box-shadow: 2px 0 6px -2px rgba(0, 0, 0, 0.2);
+
+    &::before {
+      content: '';
+      width: 100%;
+      height: 1px;
+      background-color: var(--yun-border-table-color);
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      z-index: 4;
+    }
+  }
+
+  &-fixed-right {
+    top: 0;
+    left: auto;
+    right: 0;
+    box-shadow: -2px 0 6px -2px rgba(0, 0, 0, 0.2);
+  }
+  &-fixed-right-header {
+    position: absolute;
+    top: -1px;
+    right: 0;
+    background-color: var(--yun-color-bg-fa);
+    border-top: var(--yun-border-table);
+    border-bottom: var(--yun-border-table);
+  }
+  &-fixed-header {
+    overflow: hidden;
+  }
+  &-fixed-body {
+    overflow: hidden;
+    position: relative;
+    z-index: 3;
+  }
+  &-fixed-shadow {
+    width: 1px;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    right: 0;
+    box-shadow: 1px 0 6px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    z-index: 1;
+  }
+  &-sort {
+    display: inline-block;
+    width: 14px;
+    height: 13px;
+    margin-top: -1px;
+    vertical-align: middle;
+    overflow: hidden;
+    cursor: pointer;
+    position: relative;
+    margin-left: 4px;
+    i {
+      display: block;
+      height: 6px;
+      line-height: 6px;
+      overflow: hidden;
+      position: absolute;
+      color: var(--yun-color-text-disabled);
+      transition: color var(--yun-animation-duration-base) ease-in-out;
+      font-size: 12px;
+      &:hover {
+        color: inherit;
+      }
+      &.on {
+        color: var(--yun-color-primary);
+      }
+      &:first-child {
+        top: 0;
+      }
+      &:last-child {
+        bottom: 0;
+      }
+    }
+  }
+  &-tip {
+    table {
+      width: 100%;
+      td {
+        text-align: center;
+      }
+    }
+  }
+  &-expanded-hidden {
+    visibility: hidden;
+  }
+}
+
+.yun-table-row.yun-table-ghost-class td {
+  background: #9eceff;
+}
+
+.yun-popper-tooltip-content {
+  max-width: 300px;
+  line-height: var(--yun-base-line-height);
+  word-break: break-all;
+}

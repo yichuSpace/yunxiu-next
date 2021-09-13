@@ -53,6 +53,75 @@
       ]
     },
     {
+      "desc": "导航",
+      "items": [
+        {
+          "desc": "Affix 图钉",
+          "icon": "pushpin",
+          "name": "affix",
+          "path": "/affix"
+        },
+        {
+          "desc": "Anchor 锚点",
+          "icon": "attachment",
+          "name": "anchor",
+          "path": "/anchor"
+        }
+      ]
+    },
+    {
+      "desc": "数据",
+      "items": [
+        {
+          "desc": "Table 表格",
+          "icon": "table",
+          "name": "table",
+          "path": "/table"
+        },
+        {
+          "desc": "Page 分页器",
+          "icon": "read",
+          "name": "page",
+          "path": "/page"
+        },
+        {
+          "desc": "Tree 树结构",
+          "icon": "branches",
+          "name": "tree",
+          "path": "/tree"
+        },
+        {
+          "desc": "Desc 描述列表",
+          "icon": "unorderedlist",
+          "name": "desc",
+          "path": "/desc"
+        },
+        {
+          "desc": "Progress 进度条",
+          "icon": "hourglass",
+          "name": "progress",
+          "path": "/progress"
+        },
+        {
+          "desc": "Circle 进度环",
+          "icon": "redo",
+          "name": "circle",
+          "path": "/circle"
+        }
+      ]
+    },
+    {
+      "desc": "视图",
+      "items": [
+        {
+          "desc": "Loading 加载",
+          "icon": "loading2",
+          "name": "loading",
+          "path": "/loading"
+        }
+      ]
+    },
+    {
       "desc": "表单",
       "items": [
         {
@@ -60,6 +129,12 @@
           "icon": "edit-square",
           "name": "input",
           "path": "/input"
+        },
+        {
+          "desc": "InputNumber 数字输入",
+          "icon": "shake",
+          "name": "inputNumber",
+          "path": "/inputNumber"
         },
         {
           "desc": "Form 表单",
