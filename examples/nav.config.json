@@ -70,6 +70,47 @@
       ]
     },
     {
+      "desc": "数据",
+      "items": [
+        {
+          "desc": "Table 表格",
+          "icon": "table",
+          "name": "table",
+          "path": "/table"
+        },
+        {
+          "desc": "Page 分页器",
+          "icon": "read",
+          "name": "page",
+          "path": "/page"
+        },
+        {
+          "desc": "Tree 树结构",
+          "icon": "branches",
+          "name": "tree",
+          "path": "/tree"
+        },
+        {
+          "desc": "Desc 描述列表",
+          "icon": "unorderedlist",
+          "name": "desc",
+          "path": "/desc"
+        },
+        {
+          "desc": "Progress 进度条",
+          "icon": "hourglass",
+          "name": "progress",
+          "path": "/progress"
+        },
+        {
+          "desc": "Circle 进度环",
+          "icon": "redo",
+          "name": "circle",
+          "path": "/circle"
+        }
+      ]
+    },
+    {
       "desc": "视图",
       "items": [
         {

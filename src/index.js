@@ -13,12 +13,15 @@ import YunLoading from './components/loading'
 import YunAffix from './components/affix'
 import YunAnchor from './components/anchor'
 import YunAnchorLink from './components/anchor-link'
+import YunTable from './components/table'
 
 import Notice from './components/notice'
 import Message from './components/message'
 
 import * as util from './utils/util'
 import { setConfig } from './utils/config'
+
+import { ClickAnimation, ClickOutside, NoData, Loading, Waves } from './directives'
 
 import config from '../package.json'
 
@@ -48,6 +51,7 @@ const components = [
   YunAffix,
   YunAnchor,
   YunAnchorLink,
+  YunTable,
 ]
 const plugins = [Message, Notice]
 
@@ -61,6 +65,8 @@ const install = function(app, options = {}) {
   plugins.forEach(plugin => {
     app.use(plugin)
   })
+  // 注册全局指令
+  app.directive('Loading', Loading)
   // 注册全局函数和属性
   app.config.globalProperties.$global = { ...defaultInstallOpt, ...options }
   setConfig({ ...defaultInstallOpt, ...options })
@@ -87,6 +93,7 @@ export {
   YunAffix,
   YunAnchor,
   YunAnchorLink,
+  YunTable,
   Notice,
   Utils,
 }
