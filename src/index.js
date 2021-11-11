@@ -14,6 +14,7 @@ import YunAffix from './components/affix'
 import YunAnchor from './components/anchor'
 import YunAnchorLink from './components/anchor-link'
 import YunTable from './components/table'
+import YunPagination from './components/pagination'
 
 import Notice from './components/notice'
 import Message from './components/message'
@@ -52,6 +53,7 @@ const components = [
   YunAnchor,
   YunAnchorLink,
   YunTable,
+  YunPagination,
 ]
 const plugins = [Message, Notice]
 
@@ -94,6 +96,7 @@ export {
   YunAnchor,
   YunAnchorLink,
   YunTable,
+  YunPagination,
   Notice,
   Utils,
 }

@@ -79,10 +79,10 @@
           "path": "/table"
         },
         {
-          "desc": "Page 分页器",
+          "desc": "Pagination 分页器",
           "icon": "read",
-          "name": "page",
-          "path": "/page"
+          "name": "pagination",
+          "path": "/pagination"
         },
         {
           "desc": "Tree 树结构",

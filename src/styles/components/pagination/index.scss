@@ -1,0 +1,279 @@
+@import '../../common/variables.scss';
+.yun-pagination {
+  color: var(--yun-color-text-default);
+  font-size: var(--yun-base-font-size);
+  font-variant: tabular-nums;
+  line-height: 1.5715;
+  &:after {
+    content: '';
+    display: block;
+    height: 0;
+    clear: both;
+    overflow: hidden;
+    visibility: hidden;
+  }
+  &-item {
+    display: inline-block;
+    box-sizing: border-box;
+    vertical-align: middle;
+    min-width: 32px;
+    height: 32px;
+    line-height: 30px;
+    margin-right: 4px;
+    text-align: center;
+    list-style: none;
+    background-color: var(--yun-color-white);
+    user-select: none;
+    cursor: pointer;
+    font-family: Arial;
+    border: var(--yun-border-base);
+    border-radius: var(--yun-border-base-radius);
+    transition: border var(--yun-animation-duration-base) ease-in-out,
+      color var(--yun-animation-duration-base) ease-in-out;
+    a {
+      font-family: Monospaced Number;
+      margin: 0 6px;
+      text-decoration: none;
+      color: var(--yun-color-text-default);
+    }
+    &:hover {
+      border-color: var(--yun-color-primary);
+      a {
+        color: var(--yun-color-primary);
+      }
+    }
+    &-active {
+      border-color: var(--yun-color-primary);
+      a,
+      &:hover a {
+        color: var(--yun-color-primary);
+      }
+    }
+  }
+  &-item-jump-prev,
+  &-item-jump-next {
+    margin-right: 4px;
+    &:after {
+      content: '•••';
+      display: block;
+      letter-spacing: 1px;
+      color: var(--yun-color-text-disabled);
+      text-align: center;
+    }
+    i {
+      display: none;
+    }
+    &:hover {
+      &:after {
+        display: none;
+      }
+      i {
+        display: inline;
+        color: var(--yun-color-text-disabled);
+      }
+    }
+  }
+
+  &-prev {
+    margin-right: 4px;
+  }
+  &-prev,
+  &-next,
+  &-item-jump-prev,
+  &-item-jump-next {
+    display: inline-block;
+    vertical-align: middle;
+    user-select: none;
+    min-width: 32px;
+    height: 32px;
+    line-height: 30px;
+    list-style: none;
+    text-align: center;
+    cursor: pointer;
+    color: #666;
+    font-family: Arial;
+    border: var(--yun-border-base);
+    border-radius: var(--yun-border-base-radius);
+    transition: all var(--yun-animation-duration-base) ease-in-out;
+  }
+
+  &-item-jump-prev,
+  &-item-jump-next {
+    border-color: transparent;
+  }
+  &-item-jump-prev:hover a,
+  &-item-jump-next:hover a {
+    color: var(--yun-color-primary);
+  }
+
+  &-prev,
+  &-next {
+    background-color: var(--yun-color-white);
+    padding: 0 5px;
+    a {
+      color: var(--yun-color-text-secondary);
+      font-size: var(--yun-base-font-size);
+      display: inline-flex;
+      align-items: center;
+      height: 100%;
+      .b-iconfont {
+        font-size: var(--yun-base-font-size);
+      }
+    }
+    &:hover {
+      border-color: var(--yun-color-primary);
+      a {
+        color: var(--yun-color-primary);
+      }
+    }
+  }
+
+  &-disabled {
+    cursor: not-allowed;
+    a {
+      color: var(--yun-color-text-disabled);
+    }
+    &:hover {
+      border-color: #dcdee2;
+      a {
+        color: var(--yun-color-text-disabled);
+        cursor: not-allowed;
+      }
+    }
+  }
+  &-options {
+    display: inline-block;
+    vertical-align: middle;
+    margin-left: 15px;
+    &-sizer {
+      display: inline-block;
+      margin-right: 10px;
+      min-width: 100px;
+      width: 100px;
+    }
+    &-elevator {
+      display: inline-block;
+      vertical-align: middle;
+      height: 32px;
+      line-height: 30px;
+      input {
+        display: inline-block;
+        margin: 0 8px;
+        width: 50px;
+        height: 32px;
+        line-height: 1.5;
+        padding: 0 11px;
+        font-size: var(--yun-base-font-size);
+        border: var(--yun-border-base);
+        border-radius: var(--yun-border-base-radius);
+        color: var(--yun-color-text-default);
+        background-color: var(--yun-color-white);
+        background-image: none;
+        position: relative;
+        cursor: text;
+        transition: border var(--yun-animation-duration-base) ease-in-out,
+          background var(--yun-animation-duration-base) ease-in-out, box-shadow var(--yun-animation-duration-base) ease;
+        @include placeholder();
+        &:focus,
+        &:hover {
+          border-color: var(--yun-color-primary);
+        }
+        &:focus {
+          outline: 0;
+          box-shadow: 0 0 0 2px var(--yun-color-input-shadow);
+        }
+      }
+    }
+  }
+  &-total {
+    display: inline-block;
+    height: 32px;
+    line-height: 32px;
+    margin-right: 10px;
+    font-size: var(--yun-base-font-size);
+  }
+  &-simple &-prev,
+  &-simple &-next {
+    margin: 0;
+    border: 0;
+    height: 24px;
+    line-height: normal;
+    font-size: 18px;
+  }
+
+  &-simple &-simple-pager {
+    display: inline-block;
+    margin-right: 8px;
+    vertical-align: middle;
+    input {
+      width: 30px;
+      height: 24px;
+      margin: 0 8px;
+      padding: 5px 8px;
+      text-align: center;
+      box-sizing: border-box;
+      background-color: var(--yun-color-white);
+      outline: none;
+      border: var(--yun-border-base);
+      border-radius: var(--yun-border-base-radius);
+      transition: border var(--yun-animation-duration-base) ease-in-out,
+        background var(--yun-animation-duration-base) ease-in-out, box-shadow var(--yun-animation-duration-base) ease;
+      &:hover {
+        border-color: var(--yun-color-primary);
+      }
+    }
+    span {
+      padding: 0 8px 0 2px;
+    }
+  }
+}
+
+//  mini模式
+.yun-pagination {
+  &.mini &-total {
+    height: 24px;
+    line-height: 24px;
+  }
+  &.mini &-item {
+    border-color: transparent;
+    margin: 0;
+    min-width: 24px;
+    height: 24px;
+    line-height: 23px;
+    border-radius: var(--yun-border-base-radius);
+    &-active {
+      border-color: var(--yun-color-primary);
+    }
+  }
+  &.mini &-prev,
+  &.mini &-next {
+    margin: 0;
+    min-width: 24px;
+    height: 24px;
+    line-height: 22px;
+    border: 0;
+    a {
+      i {
+        vertical-align: middle;
+      }
+    }
+  }
+  &.mini &-item-jump-prev,
+  &.mini &-item-jump-next {
+    height: 24px;
+    line-height: 24px;
+    border: none;
+    margin-right: 0;
+  }
+  &.mini &-options {
+    margin-left: 8px;
+    &-elevator {
+      height: 24px;
+      line-height: 24px;
+      input {
+        height: 24px;
+        width: 44px;
+      }
+    }
+  }
+}
