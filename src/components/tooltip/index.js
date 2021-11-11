@@ -1,7 +1,7 @@
-import YunTooltip from './tooltip.vue'
+import Tooltip from './tooltip'
 
-YunTooltip.install = Vue => {
-  Vue.component(YunTooltip.name, YunTooltip)
+Tooltip.install = app => {
+  app.component(Tooltip.name, Tooltip)
 }
 
-export default YunTooltip
+export default Tooltip
