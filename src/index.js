@@ -15,6 +15,10 @@ import YunAnchor from './components/anchor'
 import YunAnchorLink from './components/anchor-link'
 import YunTable from './components/table'
 import YunPagination from './components/pagination'
+import YunSelect from './components/select'
+import YunOption from './components/option'
+import YunOptionGroup from './components/option-group'
+import YunTag from './components/tag'
 
 import Notice from './components/notice'
 import Message from './components/message'
@@ -54,6 +58,10 @@ const components = [
   YunAnchorLink,
   YunTable,
   YunPagination,
+  YunSelect,
+  YunOption,
+  YunOptionGroup,
+  YunTag,
 ]
 const plugins = [Message, Notice]
 
@@ -97,6 +105,10 @@ export {
   YunAnchorLink,
   YunTable,
   YunPagination,
+  YunSelect,
+  YunOption,
+  YunOptionGroup,
+  YunTag,
   Notice,
   Utils,
 }

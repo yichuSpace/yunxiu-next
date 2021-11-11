@@ -1,0 +1,279 @@
+.yun-tag {
+  display: inline-block;
+  vertical-align: middle;
+  border: 1px solid #e8eaec;
+  color: #515a6e;
+  background: #f7f7f7;
+  font-size: 12px;
+  padding: 0 8px;
+  height: var(--yun-mini-height-2);
+  line-height: 20px;
+  border-radius: var(--yun-border-base-radius);
+  white-space: nowrap;
+  + .yun-tag {
+    margin-left: 6px;
+  }
+  .yun-icon-close {
+    position: relative;
+    right: -4px;
+    cursor: pointer;
+    font-size: 12px;
+    color: var(--yun-color-text-secondary);
+    &:hover {
+      color: var(--yun-color-text-default);
+    }
+  }
+  &.is-checkable {
+    cursor: pointer;
+    user-select: none;
+  }
+  &.is-checkable:not(.is-checked) {
+    background: transparent !important;
+    border-color: transparent !important;
+    color: #515a6e !important;
+  }
+  &.is-dark {
+    color: #fff !important;
+    border-color: transparent !important;
+    &.is-checkable:not(.is-checked) {
+      background: transparent !important;
+      border-color: transparent !important;
+      color: #515a6e;
+    }
+  }
+  &.no-border,
+  &.is-dot {
+    border: none;
+    height: 22px;
+    line-height: 22px;
+  }
+  .yun-dot {
+    position: relative;
+    display: inline-block;
+    vertical-align: middle;
+    width: 6px;
+    height: 6px;
+    margin-right: 6px;
+    border-radius: 50%;
+    background: #eeeeee;
+    &:after {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      border: 1px solid #eeeeee;
+      content: '';
+      animation: aniStatusProcessing 1.2s ease-in-out infinite;
+    }
+  }
+  &.is-primary {
+    background-color: var(--yun-color-primary-light6);
+    color: var(--yun-color-primary);
+    border-color: var(--yun-color-primary-light4);
+    &.is-dark {
+      background-color: var(--yun-color-primary);
+    }
+    .yun-dot {
+      background: var(--yun-color-primary);
+      &:after {
+        border-color: var(--yun-color-primary);
+      }
+    }
+  }
+  &.is-success {
+    background-color: var(--yun-color-success-light6);
+    border-color: var(--yun-color-success-light4);
+    color: var(--yun-color-success);
+    &.is-dark {
+      background-color: var(--yun-color-success);
+    }
+    .yun-dot {
+      background: var(--yun-color-success);
+      &:after {
+        border-color: var(--yun-color-success);
+      }
+    }
+  }
+  &.is-info {
+    background-color: var(--yun-color-info-light6);
+    border-color: var(--yun-color-info-light4);
+    color: var(--yun-color-info);
+    &.is-dark {
+      background-color: var(--yun-color-info);
+    }
+    .yun-dot {
+      background: var(--yun-color-info);
+      &:after {
+        border-color: var(--yun-color-info);
+      }
+    }
+  }
+  &.is-warning {
+    background-color: var(--yun-color-warning-light6);
+    border-color: var(--yun-color-warning-light4);
+    color: var(--yun-color-warning);
+    &.is-dark {
+      background-color: var(--yun-color-warning);
+    }
+    .yun-dot {
+      background: var(--yun-color-warning);
+      &:after {
+        border-color: var(--yun-color-warning);
+      }
+    }
+  }
+  &.is-danger {
+    background-color: var(--yun-color-danger-light6);
+    border-color: var(--yun-color-danger-light4);
+    color: var(--yun-color-danger);
+    &.is-dark {
+      background-color: var(--yun-color-danger);
+    }
+    .yun-dot {
+      background: var(--yun-color-danger);
+      &:after {
+        border-color: var(--yun-color-danger);
+      }
+    }
+  }
+
+  // 多色
+  &.is-magenta {
+    background: #fff0f6;
+    border-color: #ffadd2;
+    color: #eb2f96;
+    &.is-dark {
+      background-color: #eb2f96;
+    }
+    .yun-dot {
+      background: #eb2f96;
+      &:after {
+        border-color: #eb2f96;
+      }
+    }
+  }
+  &.is-red {
+    background: #fff1f0;
+    border-color: #ffa39e;
+    color: #f5222d;
+    &.is-dark {
+      background-color: #f5222d;
+    }
+    .yun-dot {
+      background: #f5222d;
+      &:after {
+        border-color: #f5222d;
+      }
+    }
+  }
+  &.is-volcano {
+    background: #fff2e8;
+    border-color: #ffbb96;
+    color: #fa541c;
+    &.is-dark {
+      background-color: #fa541c;
+    }
+    .yun-dot {
+      background: #fa541c;
+      &:after {
+        border-color: #fa541c;
+      }
+    }
+  }
+  &.is-orange {
+    background: #fff7e6;
+    border-color: #ffd591;
+    color: #fa8c16;
+    &.is-dark {
+      background-color: #fa8c16;
+    }
+    .yun-dot {
+      background: #fa8c16;
+      &:after {
+        border-color: #fa8c16;
+      }
+    }
+  }
+  &.is-gold {
+    background: #fffbe6;
+    border-color: #ffe58f;
+    color: #faad14;
+    &.is-dark {
+      background-color: #faad14;
+    }
+    .yun-dot {
+      background: #faad14;
+      &:after {
+        border-color: #faad14;
+      }
+    }
+  }
+  &.is-cyan {
+    background: #e6fffb;
+    border-color: #87e8de;
+    color: #13c2c2;
+    &.is-dark {
+      background-color: #13c2c2;
+    }
+    .yun-dot {
+      background: #13c2c2;
+      &:after {
+        border-color: #13c2c2;
+      }
+    }
+  }
+  &.is-blue {
+    background: #e6f7ff;
+    border-color: #63aee0;
+    color: #167bd7;
+    &.is-dark {
+      background-color: #167bd7;
+    }
+    .yun-dot {
+      background: #167bd7;
+      &:after {
+        border-color: #167bd7;
+      }
+    }
+  }
+  &.is-geekblue {
+    background: #f0f5ff;
+    border-color: #adc6ff;
+    color: #2f54eb;
+    &.is-dark {
+      background-color: #2f54eb;
+    }
+    .yun-dot {
+      background: #2f54eb;
+      &:after {
+        border-color: #2f54eb;
+      }
+    }
+  }
+  &.is-purple {
+    background: #f9f0ff;
+    border-color: #d3adf7;
+    color: #722ed1;
+    &.is-dark {
+      background-color: #722ed1;
+    }
+    .yun-dot {
+      background: #722ed1;
+      &:after {
+        border-color: #722ed1;
+      }
+    }
+  }
+}
+@keyframes aniStatusProcessing {
+  0% {
+    transform: scale(0.8);
+    opacity: 0.5;
+  }
+  100% {
+    transform: scale(2.4);
+    opacity: 0;
+  }
+}

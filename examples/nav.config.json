@@ -137,6 +137,72 @@
           "path": "/inputNumber"
         },
         {
+          "desc": "Radio 单选框",
+          "icon": "plus-circle",
+          "name": "radio",
+          "path": "/radio"
+        },
+        {
+          "desc": "Checkbox 多选框",
+          "icon": "check-square",
+          "name": "checkbox",
+          "path": "/checkbox"
+        },
+        {
+          "desc": "Switch 开关",
+          "icon": "build",
+          "name": "switch",
+          "path": "/switch"
+        },
+        {
+          "desc": "Select 选择器",
+          "icon": "unorderedlist",
+          "name": "select",
+          "path": "/select"
+        },
+        {
+          "desc": "Cascader 级联选择",
+          "icon": "pic-left",
+          "name": "cascader",
+          "path": "/cascader"
+        },
+        {
+          "desc": "DatePicker 日期选择器",
+          "icon": "calendar",
+          "name": "date-picker",
+          "path": "/date-picker"
+        },
+        {
+          "desc": "TimePicker 时间选择器",
+          "icon": "time-circle",
+          "name": "time-picker",
+          "path": "/time-picker"
+        },
+        {
+          "desc": "ColorPicker 颜色选择器",
+          "icon": "bg-colors",
+          "name": "color-picker",
+          "path": "/color-picker"
+        },
+        {
+          "desc": "Rate 评分",
+          "icon": "star",
+          "name": "rate",
+          "path": "/rate"
+        },
+        {
+          "desc": "Slider 滑块",
+          "icon": "minus",
+          "name": "slider",
+          "path": "/slider"
+        },
+        {
+          "desc": "Upload 上传",
+          "icon": "cloud-upload",
+          "name": "upload",
+          "path": "/upload"
+        },
+        {
           "desc": "Form 表单",
           "icon": "reconciliation",
           "name": "form",
@@ -148,10 +214,58 @@
       "desc": "视图",
       "items": [
         {
+          "desc": "Card 卡片",
+          "icon": "creditcard",
+          "name": "card",
+          "path": "/card"
+        },
+        {
+          "desc": "Badge 徽标",
+          "icon": "border",
+          "name": "badge",
+          "path": "/badge"
+        },
+        {
           "desc": "CountTo 数字动画",
           "icon": "orderedlist",
           "name": "countTo",
           "path": "/countTo"
+        },
+        {
+          "desc": "Collapse 折叠面板",
+          "icon": "database",
+          "name": "collapse",
+          "path": "/collapse"
+        },
+        {
+          "desc": "Split 分割面板",
+          "icon": "block",
+          "name": "split",
+          "path": "/split"
+        },
+        {
+          "desc": "Tag 标签",
+          "icon": "tags",
+          "name": "tag",
+          "path": "/tag"
+        },
+        {
+          "desc": "Skeleton 骨架屏",
+          "icon": "sever-fill",
+          "name": "skeleton",
+          "path": "/skeleton"
+        },
+        {
+          "desc": "Loading 加载",
+          "icon": "loading2",
+          "name": "loading",
+          "path": "/loading"
+        },
+        {
+          "desc": "LoadingBar 进度条",
+          "icon": "minus",
+          "name": "loading-bar",
+          "path": "/loading-bar"
         }
       ]
     },
