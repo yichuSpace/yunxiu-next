@@ -87,8 +87,8 @@
 <script>
 import TableTr from './table-tr.vue'
 import TableCell from './cell.vue'
-import Expand from './store/expand'
-import { useMixin } from './store/mixin'
+import Expand from './main/expand.js'
+import { useMixin } from './main/mixin'
 import { computed, inject } from 'vue'
 
 export default {
@@ -115,7 +115,7 @@ export default {
     },
   },
   setup(props) {
-    const parentRef = inject('BTable', {})
+    const parentRef = inject('YunTable', {})
     const { alignCls, setCellWidth } = useMixin(props)
 
     const expandRender = computed(() => {

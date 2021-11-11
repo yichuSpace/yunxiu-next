@@ -12,7 +12,7 @@ export default {
     },
   },
   setup(props) {
-    const tableRoot = inject('BTable', {})
+    const tableRoot = inject('YunTable', {})
     const render = tableRoot.slots[props.column.slot]
     if (!render) {
       throw Error('columns slot should be write <template> in table slots')

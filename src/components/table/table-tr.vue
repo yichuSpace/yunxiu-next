@@ -13,7 +13,7 @@ export default {
     draggable: Boolean,
   },
   setup(props) {
-    const parentRef = inject('BTable', {})
+    const parentRef = inject('YunTable', {})
 
     function rowClsName(_index) {
       return parentRef.props.rowClassName(parentRef.objData.value[_index], _index)
@@ -21,6 +21,15 @@ export default {
 
     function rowClasses(_index) {
       const obj = parentRef.objData.value
+      if (props.draggable) {
+        return [
+          `${props.prefixCls}-row`,
+          rowClsName(_index),
+          {
+            [`${props.prefixCls}-row-highlight`]: obj[_index] && obj[_index]._isHighlight,
+          },
+        ]
+      }
       return [
         `${props.prefixCls}-row`,
         rowClsName(_index),

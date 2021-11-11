@@ -19,12 +19,12 @@
               <render-header v-else :render="column.renderHeader" :column="column" :index="index"></render-header>
             </template>
             <template v-else-if="column.type === 'selection'">
-              <b-checkbox
+              <yun-checkbox
                 :indeterminate="indeterminate"
                 :model-value="isSelectAll"
                 :disabled="!data.length"
                 @change="selectAll"
-              ></b-checkbox>
+              ></yun-checkbox>
             </template>
             <template v-else>
               <span
@@ -36,12 +36,12 @@
               <render-header v-else :render="column.renderHeader" :column="column" :index="index"></render-header>
               <span :class="[prefixCls + '-sort']" v-if="column.sortable">
                 <i
-                  class="b-iconfont b-icon-caret-up"
+                  class="yun-iconfont yun-icon-caret-up"
                   :class="{ on: getColumn(rowIndex, index)._sortType === 'asc' }"
                   @click="handleSort(getColumn(rowIndex, index)._index, 'asc')"
                 ></i>
                 <i
-                  class="b-iconfont b-icon-caret-down"
+                  class="yun-iconfont yun-icon-caret-down"
                   :class="{ on: getColumn(rowIndex, index)._sortType === 'desc' }"
                   @click="handleSort(getColumn(rowIndex, index)._index, 'desc')"
                 ></i>
@@ -60,14 +60,14 @@
 </template>
 
 <script>
-import renderHeader from './store/header'
+import renderHeader from './main/header'
 import { computed, inject } from 'vue'
-import { useMixin } from './store/mixin'
-import BCheckbox from '../checkbox/checkbox'
+import { useMixin } from './main/mixin'
+import YunCheckbox from '../checkbox/checkbox'
 
 export default {
   name: 'TableHead',
-  components: { BCheckbox, renderHeader },
+  components: { YunCheckbox, renderHeader },
   props: {
     prefixCls: String,
     styleObject: Object,

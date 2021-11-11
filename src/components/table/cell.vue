@@ -4,19 +4,24 @@
       <span>{{ column.indexMethod ? column.indexMethod(row) : naturalIndex + 1 }}</span>
     </template>
     <template v-if="renderType === 'selection'">
-      <b-checkbox :model-value="checked" @click.native.stop @change="toggleSelect" :disabled="disabled"></b-checkbox>
+      <yun-checkbox
+        :model-value="checked"
+        @click.native.stop
+        @change="toggleSelect"
+        :disabled="disabled"
+      ></yun-checkbox>
     </template>
     <template v-if="renderType === 'html'">
       <span v-html="row[column.key]"></span>
     </template>
     <template v-if="renderType === 'normal'">
       <template v-if="column.tooltip && tooltipTheme">
-        <b-tooltip class="yun-table-cell-tooltip-content" append-to-body :theme="tooltipTheme">
+        <yun-tooltip class="yun-table-cell-tooltip-content" append-to-body :theme="tooltipTheme">
           <span>{{ row[column.key] }}</span>
           <template #content>
             <div>{{ row[column.key] }}</div>
           </template>
-        </b-tooltip>
+        </yun-tooltip>
       </template>
       <span v-else-if="column.tooltip && !tooltipTheme" class="yun-table-cell-tooltip-content" :title="row[column.key]"
         >{{ row[column.key] }}
@@ -25,7 +30,7 @@
     </template>
     <template v-if="renderType === 'expand' && !row._disableExpand">
       <div :class="expandCls" @click="toggleExpand">
-        <i class="b-iconfont b-icon-right"></i>
+        <i class="yun-iconfont yun-icon-right"></i>
       </div>
     </template>
     <table-expand
@@ -40,15 +45,15 @@
 </template>
 
 <script>
-import TableExpand from './store/expand'
-import TableSlot from './store/slot'
-import BCheckbox from '../checkbox/checkbox'
+import TableExpand from './main/expand'
+import TableSlot from './main/slot'
+import YunCheckbox from '../checkbox/checkbox'
 import { inject, ref } from 'vue'
-import BTooltip from '../tooltip'
+import YunTooltip from '../tooltip'
 
 export default {
   name: 'TableCell',
-  components: { BTooltip, BCheckbox, TableExpand, TableSlot },
+  components: { YunTooltip, YunCheckbox, TableExpand, TableSlot },
   props: {
     prefixCls: String,
     row: Object,
@@ -83,7 +88,7 @@ export default {
   },
   setup(props) {
     const tooltipContentRef = ref(null)
-    const TableRoot = inject('BTable', {})
+    const TableRoot = inject('YunTable', {})
     const renderType = ref(getRenderType())
 
     function getRenderType() {

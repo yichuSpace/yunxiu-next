@@ -118,7 +118,7 @@
 <script>
 import { deepCopy } from '../../utils/util'
 import { getStyle, on, off, getScrollBarWidth } from '../../utils/dom'
-import { getAllColumns, convertToRows, convertColumnOrder, getRandomStr } from './store/util'
+import { getAllColumns, convertToRows, convertColumnOrder, getRandomStr } from './main/util'
 import { addResizeListener, removeResizeListener } from '../../utils/resizeEvent'
 import Sortable from 'sortablejs'
 import { computed, nextTick, onBeforeUnmount, onMounted, provide, ref, watch } from 'vue'
@@ -862,7 +862,7 @@ export default {
       emit('drag-drop', list, newIndex, oldIndex)
     }
 
-    provide('BTable', {
+    provide('YunTable', {
       props,
       showVerticalScrollBar,
       scrollBarWidth,
