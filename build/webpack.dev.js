@@ -86,13 +86,16 @@ const config = {
     hints: false,
   },
   devServer: {
-    inline: true,
     hot: true,
-    stats: 'minimal',
-    port: 8088,
-    publicPath: '/',
-    contentBase: __dirname,
-    overlay: true,
+    port: 8090,
+    static: {
+      directory: __dirname,
+      publicPath: '/',
+    },
+    client: {
+      progress: true,
+      overlay: true,
+    },
     open: true,
   },
   optimization: {
