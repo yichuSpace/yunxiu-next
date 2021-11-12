@@ -19,6 +19,8 @@ import YunSelect from './components/select'
 import YunOption from './components/option'
 import YunOptionGroup from './components/option-group'
 import YunTag from './components/tag'
+// import YunRadio from './components/radio'
+// import YunRadioGroup from './components/radio-group'
 
 import Notice from './components/notice'
 import Message from './components/message'
@@ -62,6 +64,8 @@ const components = [
   YunOption,
   YunOptionGroup,
   YunTag,
+  // YunRadio,
+  // YunRadioGroup,
 ]
 const plugins = [Message, Notice]
 
@@ -76,6 +80,10 @@ const install = function(app, options = {}) {
     app.use(plugin)
   })
   // 注册全局指令
+  app.directive('Waves', Waves)
+  app.directive('ClickAnimation', ClickAnimation)
+  app.directive('ClickOutside', ClickOutside)
+  app.directive('NoData', NoData)
   app.directive('Loading', Loading)
   // 注册全局函数和属性
   app.config.globalProperties.$global = { ...defaultInstallOpt, ...options }
@@ -109,6 +117,8 @@ export {
   YunOption,
   YunOptionGroup,
   YunTag,
+  // YunRadio,
+  // YunRadioGroup,
   Notice,
   Utils,
 }

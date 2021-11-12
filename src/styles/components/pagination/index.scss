@@ -1,4 +1,6 @@
 @import '../../common/variables.scss';
+@import '../../mixins/mixins';
+
 .yun-pagination {
   color: var(--yun-color-text-default);
   font-size: var(--yun-base-font-size);
