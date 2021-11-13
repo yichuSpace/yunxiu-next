@@ -22,7 +22,7 @@ import { throwError } from '../../../utils/log'
 const UPDATE_VISIBLE_EVENT = 'update:visible'
 
 export default {
-  name: 'BPopper',
+  name: 'YunPopper',
   props: defaultProps,
   emits: [UPDATE_VISIBLE_EVENT, 'after-enter', 'after-leave', 'before-enter', 'before-leave'],
   setup(props, ctx) {

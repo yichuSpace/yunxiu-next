@@ -28,6 +28,8 @@ import YunPopover from './components/popover'
 import YunTooltip from './components/tooltip'
 import YunDatePicker from './components/date-picker'
 import YunTimePicker from './components/time-picker'
+import YunEmpty from './components/empty'
+import YunPopper from './components/popper'
 
 import Notice from './components/notice'
 import Message from './components/message'
@@ -80,6 +82,8 @@ const components = [
   YunTooltip,
   YunDatePicker,
   YunTimePicker,
+  YunEmpty,
+  YunPopper,
 ]
 const plugins = [Message, Notice]
 
@@ -140,6 +144,8 @@ export {
   YunTooltip,
   YunDatePicker,
   YunTimePicker,
+  YunEmpty,
+  YunPopper,
   Notice,
   Utils,
 }

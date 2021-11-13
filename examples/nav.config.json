@@ -13,6 +13,29 @@
   ],
   "组件": [
     {
+      "desc": "内置组件",
+      "items": [
+        {
+          "desc": "Scrollbar 滚动",
+          "icon": "container",
+          "name": "scrollbar",
+          "path": "/scrollbar"
+        },
+        {
+          "desc": "Empty 空状态",
+          "icon": "border",
+          "name": "empty",
+          "path": "/empty"
+        },
+        {
+          "desc": "Popper 弹层",
+          "icon": "pic-center",
+          "name": "popperjs",
+          "path": "/popperjs"
+        }
+      ]
+    },
+    {
       "desc": "基础",
       "items": [
         {
@@ -49,12 +72,24 @@
           "icon": "line",
           "name": "divider",
           "path": "/divider"
+        },
+        {
+          "desc": "Space 间距",
+          "icon": "swap",
+          "name": "space",
+          "path": "/space"
         }
       ]
     },
     {
       "desc": "导航",
       "items": [
+        {
+          "desc": "Menu 导航菜单",
+          "icon": "menu",
+          "name": "menu",
+          "path": "/menu"
+        },
         {
           "desc": "Affix 图钉",
           "icon": "pushpin",
@@ -66,58 +101,36 @@
           "icon": "attachment",
           "name": "anchor",
           "path": "/anchor"
-        }
-      ]
-    },
-    {
-      "desc": "数据",
-      "items": [
-        {
-          "desc": "Table 表格",
-          "icon": "table",
-          "name": "table",
-          "path": "/table"
         },
         {
-          "desc": "Pagination 分页器",
-          "icon": "read",
-          "name": "pagination",
-          "path": "/pagination"
+          "desc": "Breadcrumb 面包屑",
+          "icon": "right",
+          "name": "breadcrumb",
+          "path": "/breadcrumb"
         },
         {
-          "desc": "Tree 树结构",
-          "icon": "branches",
-          "name": "tree",
-          "path": "/tree"
+          "desc": "BackTop 返回顶部",
+          "icon": "up",
+          "name": "backtop",
+          "path": "/backtop"
         },
         {
-          "desc": "Desc 描述列表",
-          "icon": "unorderedlist",
-          "name": "desc",
-          "path": "/desc"
+          "desc": "Tabs 标签页",
+          "icon": "project",
+          "name": "tabs",
+          "path": "/tabs"
         },
         {
-          "desc": "Progress 进度条",
-          "icon": "hourglass",
-          "name": "progress",
-          "path": "/progress"
+          "desc": "Dropdown 下拉菜单",
+          "icon": "caret-down",
+          "name": "dropdown",
+          "path": "/dropdown"
         },
         {
-          "desc": "Circle 进度环",
-          "icon": "redo",
-          "name": "circle",
-          "path": "/circle"
-        }
-      ]
-    },
-    {
-      "desc": "视图",
-      "items": [
-        {
-          "desc": "Loading 加载",
-          "icon": "loading2",
-          "name": "loading",
-          "path": "/loading"
+          "desc": "Steps 步骤条",
+          "icon": "arrowright",
+          "name": "steps",
+          "path": "/steps"
         }
       ]
     },
@@ -207,6 +220,58 @@
           "icon": "reconciliation",
           "name": "form",
           "path": "/form"
+        }
+      ]
+    },
+    {
+      "desc": "数据",
+      "items": [
+        {
+          "desc": "Table 表格",
+          "icon": "table",
+          "name": "table",
+          "path": "/table"
+        },
+        {
+          "desc": "Pagination 分页器",
+          "icon": "read",
+          "name": "pagination",
+          "path": "/pagination"
+        },
+        {
+          "desc": "Tree 树结构",
+          "icon": "branches",
+          "name": "tree",
+          "path": "/tree"
+        },
+        {
+          "desc": "Desc 描述列表",
+          "icon": "unorderedlist",
+          "name": "desc",
+          "path": "/desc"
+        },
+        {
+          "desc": "Progress 进度条",
+          "icon": "hourglass",
+          "name": "progress",
+          "path": "/progress"
+        },
+        {
+          "desc": "Circle 进度环",
+          "icon": "redo",
+          "name": "circle",
+          "path": "/circle"
+        }
+      ]
+    },
+    {
+      "desc": "视图",
+      "items": [
+        {
+          "desc": "Loading 加载",
+          "icon": "loading2",
+          "name": "loading",
+          "path": "/loading"
         }
       ]
     },
@@ -319,6 +384,82 @@
           "icon": "build",
           "name": "drawer",
           "path": "/drawer"
+        }
+      ]
+    },
+    {
+      "desc": "反馈",
+      "items": [
+        {
+          "desc": "Alert 警告提示",
+          "icon": "error-fill",
+          "name": "alert",
+          "path": "/alert"
+        },
+        {
+          "desc": "Modal 模态框",
+          "icon": "idcard",
+          "name": "modal",
+          "path": "/modal"
+        },
+        {
+          "desc": "Message 提示",
+          "icon": "message",
+          "name": "message",
+          "path": "/message"
+        },
+        {
+          "desc": "Notice 通知",
+          "icon": "notification",
+          "name": "notice",
+          "path": "/notice"
+        },
+        {
+          "desc": "MessageBox 弹框",
+          "icon": "mail",
+          "name": "messageBox",
+          "path": "/messageBox"
+        },
+        {
+          "desc": "Tooltip 提示",
+          "icon": "info-circle-fill",
+          "name": "tooltip",
+          "path": "/tooltip"
+        },
+        {
+          "desc": "Popover 气泡弹框",
+          "icon": "question-circle",
+          "name": "popover",
+          "path": "/popover"
+        },
+        {
+          "desc": "Drawer 抽屉",
+          "icon": "build",
+          "name": "drawer",
+          "path": "/drawer"
+        }
+      ]
+    },
+    {
+      "desc": "其他",
+      "items": [
+        {
+          "desc": "Calendar 日历组件",
+          "icon": "calendar-fill",
+          "name": "calendar",
+          "path": "/calendar"
+        },
+        {
+          "desc": "Carousel 轮播",
+          "icon": "appstore-fill",
+          "name": "carousel",
+          "path": "/carousel"
+        },
+        {
+          "desc": "Timeline 时间线",
+          "icon": "arrowdown",
+          "name": "timeline",
+          "path": "/timeline"
         }
       ]
     }
