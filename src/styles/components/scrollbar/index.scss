@@ -1,2 +1,65 @@
-.yun-button {
+.yun-scrollbar {
+  position: relative;
+  overflow: hidden;
+  height: 100%;
+  &:active,
+  &:focus,
+  &:hover {
+    > .yun-scrollbar__bar {
+      opacity: 1;
+      transition: opacity 0.3s ease-out;
+    }
+  }
+}
+
+.yun-scrollbar__wrap {
+  overflow: auto;
+  height: 100%;
+}
+
+// 默认隐藏原生滚动条宽度
+.yun-scrollbar__wrap--hidden-default {
+  scrollbar-width: none;
+}
+.yun-scrollbar__wrap--hidden-default::-webkit-scrollbar {
+  display: none;
+}
+.yun-scrollbar__bar {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  z-index: 1;
+  opacity: 0;
+  transition: opacity 0.12s ease-out;
+  &.is-horizontal {
+    height: 6px;
+    left: 0;
+    > div {
+      height: 100%;
+    }
+  }
+  &.is-vertical {
+    width: 6px;
+    top: 0;
+    > div {
+      width: 100%;
+    }
+  }
+  &.always {
+    opacity: 1;
+  }
+}
+
+.yun-scrollbar__thumb {
+  position: relative;
+  display: block;
+  width: 0;
+  height: 0;
+  cursor: pointer;
+  border-radius: inherit;
+  background: rgba(0, 0, 0, 0.2);
+  transition: box-shadow var(--yun-animation-duration-base);
+  &:hover {
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.25);
+  }
 }

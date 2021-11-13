@@ -26,6 +26,8 @@ import YunCheckboxGroup from './components/checkbox-group'
 import YunSwitch from './components/switch'
 import YunPopover from './components/popover'
 import YunTooltip from './components/tooltip'
+import YunDatePicker from './components/date-picker'
+import YunTimePicker from './components/time-picker'
 
 import Notice from './components/notice'
 import Message from './components/message'
@@ -76,6 +78,8 @@ const components = [
   YunSwitch,
   YunPopover,
   YunTooltip,
+  YunDatePicker,
+  YunTimePicker,
 ]
 const plugins = [Message, Notice]
 
@@ -134,6 +138,8 @@ export {
   YunSwitch,
   YunPopover,
   YunTooltip,
+  YunDatePicker,
+  YunTimePicker,
   Notice,
   Utils,
 }

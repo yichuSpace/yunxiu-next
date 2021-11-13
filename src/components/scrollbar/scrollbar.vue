@@ -18,92 +18,92 @@
 </template>
 
 <script>
-import { addResizeListener, removeResizeListener } from '../../utils/resizeEvent';
-import { on, off } from '../../utils/dom';
-import { toObject } from './util';
+import { addResizeListener, removeResizeListener } from '../../utils/resizeEvent'
+import { on, off } from '../../utils/dom'
+import { toObject } from './util'
 
-import { ref, onMounted, onBeforeUnmount, nextTick, provide, computed } from 'vue';
-import Bar from './bar';
+import { ref, onMounted, onBeforeUnmount, nextTick, provide, computed } from 'vue'
+import Bar from './bar'
 export default {
   name: 'YunScrollbar',
   components: { Bar },
   props: {
     native: {
       type: Boolean,
-      default: false
+      default: false,
     },
     wrapStyle: {
       type: [String, Array],
-      default: ''
+      default: '',
     },
     wrapClass: {
       type: [String, Array],
-      default: ''
+      default: '',
     },
     viewClass: {
       type: [String, Array],
-      default: ''
+      default: '',
     },
     viewStyle: {
       type: [String, Array],
-      default: ''
+      default: '',
     },
     noresize: Boolean, // 如果 container 尺寸不会发生变化，最好设置它可以优化性能
     tag: {
       type: String,
-      default: 'div'
-    }
+      default: 'div',
+    },
   },
   setup(props) {
-    const sizeWidth = ref('0');
-    const sizeHeight = ref('0');
-    const moveX = ref(0);
-    const moveY = ref(0);
-    const wrap = ref(null);
-    const resize = ref(null);
+    const sizeWidth = ref('0')
+    const sizeHeight = ref('0')
+    const moveX = ref(0)
+    const moveY = ref(0)
+    const wrap = ref(null)
+    const resize = ref(null)
 
-    provide('scroll-bar-wrap', wrap);
+    provide('scroll-bar-wrap', wrap)
 
     const handleScroll = () => {
       if (!props.native && wrap.value) {
-        moveY.value = (wrap.value.scrollTop * 100) / wrap.value.clientHeight;
-        moveX.value = (wrap.value.scrollLeft * 100) / wrap.value.clientWidth;
+        moveY.value = (wrap.value.scrollTop * 100) / wrap.value.clientHeight
+        moveX.value = (wrap.value.scrollLeft * 100) / wrap.value.clientWidth
       }
-    };
+    }
 
     const update = () => {
-      if (!wrap.value) return;
+      if (!wrap.value) return
 
-      const heightPercentage = (wrap.value.clientHeight * 100) / wrap.value.scrollHeight;
-      const widthPercentage = (wrap.value.clientWidth * 100) / wrap.value.scrollWidth;
+      const heightPercentage = (wrap.value.clientHeight * 100) / wrap.value.scrollHeight
+      const widthPercentage = (wrap.value.clientWidth * 100) / wrap.value.scrollWidth
 
-      sizeHeight.value = heightPercentage < 100 ? heightPercentage + '%' : '';
-      sizeWidth.value = widthPercentage < 100 ? widthPercentage + '%' : '';
-    };
+      sizeHeight.value = heightPercentage < 100 ? heightPercentage + '%' : ''
+      sizeWidth.value = widthPercentage < 100 ? widthPercentage + '%' : ''
+    }
 
     onMounted(() => {
-      if (props.native) return;
-      nextTick(update);
+      if (props.native) return
+      nextTick(update)
       if (!props.noresize) {
-        on(window, 'resize', update);
-        addResizeListener(resize.value, update);
+        on(window, 'resize', update)
+        addResizeListener(resize.value, update)
       }
-    });
+    })
 
     onBeforeUnmount(() => {
-      if (props.native) return;
+      if (props.native) return
       if (!props.noresize) {
-        off(window, 'resize', update);
-        removeResizeListener(resize.value, update);
+        off(window, 'resize', update)
+        removeResizeListener(resize.value, update)
       }
-    });
+    })
     const style = computed(() => {
-      let style = props.wrapStyle;
+      let style = props.wrapStyle
       if (Array.isArray(props.wrapStyle)) {
-        style = toObject(props.wrapStyle);
+        style = toObject(props.wrapStyle)
       }
-      return style;
-    });
+      return style
+    })
     return {
       moveX,
       moveY,
@@ -113,10 +113,8 @@ export default {
       wrap,
       resize,
       update,
-      handleScroll
-    };
-  }
-};
+      handleScroll,
+    }
+  },
+}
 </script>
-
-<style></style>
