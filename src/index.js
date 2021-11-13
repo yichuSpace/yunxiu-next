@@ -31,6 +31,7 @@ import YunTimePicker from './components/time-picker'
 import YunEmpty from './components/empty'
 import YunPopper from './components/popper'
 import YunScrollbar from './components/scrollbar'
+import YunSpace from './components/space'
 
 import Notice from './components/notice'
 import Message from './components/message'
@@ -86,6 +87,7 @@ const components = [
   YunEmpty,
   YunPopper,
   YunScrollbar,
+  YunSpace,
 ]
 const plugins = [Message, Notice]
 
@@ -149,6 +151,7 @@ export {
   YunEmpty,
   YunPopper,
   YunScrollbar,
+  YunSpace,
   Notice,
   Utils,
 }
