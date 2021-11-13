@@ -19,8 +19,8 @@ import YunSelect from './components/select'
 import YunOption from './components/option'
 import YunOptionGroup from './components/option-group'
 import YunTag from './components/tag'
-// import YunRadio from './components/radio'
-// import YunRadioGroup from './components/radio-group'
+import YunRadio from './components/radio'
+import YunRadioGroup from './components/radio-group'
 import YunCheckbox from './components/checkbox'
 import YunCheckboxGroup from './components/checkbox-group'
 import YunSwitch from './components/switch'
@@ -68,8 +68,8 @@ const components = [
   YunOption,
   YunOptionGroup,
   YunTag,
-  // YunRadio,
-  // YunRadioGroup,
+  YunRadio,
+  YunRadioGroup,
   YunCheckbox,
   YunCheckboxGroup,
   YunSwitch,
@@ -125,8 +125,8 @@ export {
   YunOption,
   YunOptionGroup,
   YunTag,
-  // YunRadio,
-  // YunRadioGroup,
+  YunRadio,
+  YunRadioGroup,
   YunCheckbox,
   YunCheckboxGroup,
   YunSwitch,
