@@ -23,6 +23,9 @@ import YunTag from './components/tag'
 // import YunRadioGroup from './components/radio-group'
 import YunCheckbox from './components/checkbox'
 import YunCheckboxGroup from './components/checkbox-group'
+import YunSwitch from './components/switch'
+import YunPopover from './components/popover'
+
 import Notice from './components/notice'
 import Message from './components/message'
 
@@ -69,6 +72,8 @@ const components = [
   // YunRadioGroup,
   YunCheckbox,
   YunCheckboxGroup,
+  YunSwitch,
+  YunPopover,
 ]
 const plugins = [Message, Notice]
 
@@ -124,6 +129,8 @@ export {
   // YunRadioGroup,
   YunCheckbox,
   YunCheckboxGroup,
+  YunSwitch,
+  YunPopover,
   Notice,
   Utils,
 }

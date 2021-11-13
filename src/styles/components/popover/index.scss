@@ -1,0 +1,23 @@
+.yun-popover {
+  &.yun-popper {
+    background: #fff;
+    min-width: 150px;
+    border-radius: var(--yun-border-base-radius);
+    z-index: 2000;
+    color: var(--yun-color-text-default);
+    text-align: justify;
+    font-size: var(--yun-base-font-size);
+    box-shadow: var(--yun-shadow-popper);
+    word-break: break-all;
+    padding: 12px;
+    .yun-popover__title {
+      width: 100%;
+      line-height: 1;
+      margin: 0;
+      color: var(--yun-color-text-primary);
+      font-weight: 700;
+      font-size: var(--yun-header-font-size);
+      margin-bottom: 12px;
+    }
+  }
+}
