@@ -1,0 +1,87 @@
+$arrow-width: 5px;
+$arrow-distance: $arrow-width - 1 + 4;
+$bg-black: #303133;
+$bg-light: #ffffff;
+$border-color: #e4e7ed;
+
+.yun-popper {
+  position: absolute;
+  border-radius: var(--yun-border-base-radius);
+  padding: 10px;
+  z-index: 2000;
+  font-size: var(--yun-base-font-size);
+  line-height: var(--yun-base-line-height);
+  min-width: 10px;
+  word-wrap: break-word;
+  visibility: visible;
+  &.is-dark {
+    color: $bg-light;
+    background: $bg-black;
+    .yun-popper__arrow::before {
+      background: $bg-black;
+      right: 0;
+    }
+  }
+  &.is-light {
+    background: $bg-light;
+    box-shadow: var(--yun-shadow-popper);
+    .yun-popper__arrow::before {
+      box-shadow: 3px 3px 7px rgba(0, 0, 0, 0.07);
+      background: $bg-light;
+      right: 0;
+    }
+  }
+  &.is-pure {
+    padding: 0;
+  }
+}
+
+.yun-popper__arrow {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  z-index: -1;
+  &::before {
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    z-index: -1;
+    content: ' ';
+    transform: rotate(45deg);
+    background: $bg-black;
+    box-sizing: border-box;
+  }
+}
+
+.yun-popper[data-popper-placement^='top'] > .yun-popper__arrow {
+  bottom: -4px;
+}
+.yun-popper[data-popper-placement^='bottom'] > .yun-popper__arrow {
+  top: -4px;
+}
+.yun-popper[data-popper-placement^='left'] > .yun-popper__arrow {
+  right: -4px;
+}
+.yun-popper[data-popper-placement^='right'] > .yun-popper__arrow {
+  left: -4px;
+}
+.yun-popper.is-light[data-popper-placement^='top'] .yun-popper__arrow::before {
+  box-shadow: 3px 3px 7px rgba(0, 0, 0, 0.07);
+  border-top-color: transparent;
+  border-left-color: transparent;
+}
+.yun-popper.is-light[data-popper-placement^='bottom'] .yun-popper__arrow::before {
+  box-shadow: -3px -3px 7px rgba(0, 0, 0, 0.07);
+  border-bottom-color: transparent;
+  border-right-color: transparent;
+}
+.yun-popper.is-light[data-popper-placement^='left'] .yun-popper__arrow::before {
+  box-shadow: 3px -3px 7px rgba(0, 0, 0, 0.07);
+  border-left-color: transparent;
+  border-bottom-color: transparent;
+}
+.yun-popper.is-light[data-popper-placement^='right'] .yun-popper__arrow::before {
+  box-shadow: -3px 3px 7px rgba(0, 0, 0, 0.07);
+  border-right-color: transparent;
+  border-top-color: transparent;
+}

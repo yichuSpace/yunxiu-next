@@ -37,7 +37,7 @@ export default {
   setup(props, ctx) {
     // when manual mode is true, v-model must be passed down
     if (props.manual && typeof props.modelValue === 'undefined') {
-      throwError('[YunPopper]', 'You need to pass a v-model to b-tooltip when `manual` is true')
+      throwError('[YunPopper]', 'You need to pass a v-model to yun-tooltip when `manual` is true')
     }
 
     const popper = ref(null)
@@ -60,7 +60,7 @@ export default {
     const { $slots, content, manual, openDelay, onUpdateVisible, showAfter, visibleArrow, modelValue, tabindex } = this
 
     const throwErrorTip = () => {
-      throwError('[BTooltip]', 'you need to provide a valid default slot.')
+      throwError('[YunTooltip]', 'you need to provide a valid default slot.')
     }
 
     return h(

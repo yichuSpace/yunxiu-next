@@ -25,6 +25,7 @@ import YunCheckbox from './components/checkbox'
 import YunCheckboxGroup from './components/checkbox-group'
 import YunSwitch from './components/switch'
 import YunPopover from './components/popover'
+import YunTooltip from './components/tooltip'
 
 import Notice from './components/notice'
 import Message from './components/message'
@@ -74,6 +75,7 @@ const components = [
   YunCheckboxGroup,
   YunSwitch,
   YunPopover,
+  YunTooltip,
 ]
 const plugins = [Message, Notice]
 
@@ -131,6 +133,7 @@ export {
   YunCheckboxGroup,
   YunSwitch,
   YunPopover,
+  YunTooltip,
   Notice,
   Utils,
 }
