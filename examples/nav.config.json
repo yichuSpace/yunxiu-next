@@ -377,59 +377,6 @@
       ]
     },
     {
-      "desc": "反馈",
-      "items": [
-        {
-          "desc": "Alert 警告提示",
-          "icon": "error-fill",
-          "name": "alert",
-          "path": "/alert"
-        },
-        {
-          "desc": "Modal 模态框",
-          "icon": "idcard",
-          "name": "modal",
-          "path": "/modal"
-        },
-        {
-          "desc": "Message 提示",
-          "icon": "message",
-          "name": "message",
-          "path": "/message"
-        },
-        {
-          "desc": "Notice 通知",
-          "icon": "notification",
-          "name": "notice",
-          "path": "/notice"
-        },
-        {
-          "desc": "MessageBox 弹框",
-          "icon": "mail",
-          "name": "messageBox",
-          "path": "/messageBox"
-        },
-        {
-          "desc": "Tooltip 提示",
-          "icon": "info-circle-fill",
-          "name": "tooltip",
-          "path": "/tooltip"
-        },
-        {
-          "desc": "Popover 气泡弹框",
-          "icon": "question-circle",
-          "name": "popover",
-          "path": "/popover"
-        },
-        {
-          "desc": "Drawer 抽屉",
-          "icon": "build",
-          "name": "drawer",
-          "path": "/drawer"
-        }
-      ]
-    },
-    {
       "desc": "其他",
       "items": [
         {

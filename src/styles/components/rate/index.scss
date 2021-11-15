@@ -1,0 +1,40 @@
+.yun-rate {
+  height: 20px;
+  line-height: 1;
+  outline: none;
+}
+.yun-rate__item {
+  font-size: 0;
+  vertical-align: middle;
+}
+.yun-rate__icon,
+.yun-rate__item {
+  display: inline-block;
+  position: relative;
+}
+
+.yun-rate__icon {
+  font-size: 20px;
+  margin-right: 6px;
+  color: #c0c4cc;
+  transition: var(--yun-animation-duration-base);
+  &.hover {
+    transform: scale(1.15);
+  }
+}
+
+.yun-rate__decimal,
+.yun-rate__icon .path2 {
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+.yun-rate__decimal {
+  display: inline-block;
+  overflow: hidden;
+  font-size: 20px;
+}
+.yun-rate__text {
+  font-size: 14px;
+  vertical-align: middle;
+}
