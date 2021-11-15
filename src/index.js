@@ -43,6 +43,8 @@ import YunDropdownItem from './components/dropdown-item'
 import YunDropdownMenu from './components/dropdown-menu'
 import YunBackTop from './components/back-top'
 import YunTabs from './components/tabs'
+import YunStep from './components/step'
+import YunSteps from './components/steps'
 
 import Notice from './components/notice'
 import Message from './components/message'
@@ -109,6 +111,8 @@ const components = [
   YunDropdownMenu,
   YunBackTop,
   YunTabs,
+  YunStep,
+  YunSteps,
   YunSpace,
 ]
 
@@ -188,6 +192,8 @@ export {
   YunDropdownMenu,
   YunBackTop,
   YunTabs,
+  YunStep,
+  YunSteps,
   Notice,
   Utils,
 }
