@@ -32,6 +32,10 @@ import YunEmpty from './components/empty'
 import YunPopper from './components/popper'
 import YunScrollbar from './components/scrollbar'
 import YunSpace from './components/space'
+import YunMenu from './components/menu'
+import YunMenuItem from './components/menu-item'
+import YunMenuItemGroup from './components/menu-item-group'
+import YunSubmenu from './components/submenu'
 
 import Notice from './components/notice'
 import Message from './components/message'
@@ -87,6 +91,10 @@ const components = [
   YunEmpty,
   YunPopper,
   YunScrollbar,
+  YunMenu,
+  YunMenuItem,
+  YunMenuItemGroup,
+  YunSubmenu,
   YunSpace,
 ]
 const plugins = [Message, Notice]
@@ -152,6 +160,10 @@ export {
   YunPopper,
   YunScrollbar,
   YunSpace,
+  YunMenu,
+  YunMenuItem,
+  YunMenuItemGroup,
+  YunSubmenu,
   Notice,
   Utils,
 }
