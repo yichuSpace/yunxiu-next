@@ -49,6 +49,7 @@ import YunCascader from './components/cascader'
 import YunCascaderPanel from './components/cascader-panel'
 import YunColorPicker from './components/color-picker'
 import YunRate from './components/rate'
+import YunSlider from './components/slider'
 
 import Notice from './components/notice'
 import Message from './components/message'
@@ -122,6 +123,7 @@ const components = [
   YunSpace,
   YunColorPicker,
   YunRate,
+  YunSlider,
 ]
 
 const plugins = [Message, Notice]
@@ -206,6 +208,7 @@ export {
   YunCascaderPanel,
   YunColorPicker,
   YunRate,
+  YunSlider,
   Notice,
   Utils,
 }
