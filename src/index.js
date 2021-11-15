@@ -45,6 +45,8 @@ import YunBackTop from './components/back-top'
 import YunTabs from './components/tabs'
 import YunStep from './components/step'
 import YunSteps from './components/steps'
+import YunCascader from './components/cascader'
+import YunCascaderPanel from './components/cascader-panel'
 
 import Notice from './components/notice'
 import Message from './components/message'
@@ -113,6 +115,8 @@ const components = [
   YunTabs,
   YunStep,
   YunSteps,
+  YunCascader,
+  YunCascaderPanel,
   YunSpace,
 ]
 
@@ -194,6 +198,8 @@ export {
   YunTabs,
   YunStep,
   YunSteps,
+  YunCascader,
+  YunCascaderPanel,
   Notice,
   Utils,
 }
