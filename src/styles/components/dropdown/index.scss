@@ -1,0 +1,94 @@
+.yun-dropdown {
+  display: inline-block;
+  position: relative;
+  color: var(--yun-color-text-default);
+  font-size: var(--yun-base-font-size);
+  i.yun-iconfont {
+    font-size: 14px;
+  }
+}
+
+.yun-dropdown__popper {
+  &.yun-popper[role='tooltip'] {
+    padding: 5px 0;
+    background-color: #fff;
+    max-height: none;
+    box-shadow: var(--yun-shadow-down);
+    border: none;
+    &.is-dark {
+      background-color: var(--yun-dark-bg);
+      .yun-dropdown-menu .yun-dropdown-item {
+        color: rgba(255, 255, 255, 0.65);
+        &:hover,
+        &:focus {
+          outline: none;
+          color: #fff;
+          background-color: transparent;
+        }
+        &-selected {
+          background-color: var(--yun-color-primary);
+          color: #fff;
+        }
+        &-disabled {
+          color: rgba(255, 255, 255, 0.35) !important;
+          cursor: not-allowed;
+        }
+        &-divided {
+          border-top: 1px solid #a0a0a0;
+        }
+      }
+    }
+  }
+  .yun-dropdown__popper-selfdefine {
+    outline: 0;
+  }
+}
+
+.yun-dropdown-menu {
+  min-width: 100px;
+  .yun-dropdown {
+    width: 100%;
+  }
+  .yun-dropdown-item {
+    margin: 0;
+    padding: 5px 12px;
+    line-height: 22px;
+    width: 100%;
+    clear: both;
+    color: var(--yun-color-text-default);
+    font-size: var(--yun-base-font-size) !important;
+    white-space: nowrap;
+    list-style: none;
+    cursor: pointer;
+    transition: background var(--yun-animation-duration-base) ease-in-out;
+    &:hover,
+    &:focus {
+      background: #f3f3f3;
+      outline: none;
+    }
+
+    &-selected {
+      background: var(--yun-color-primary-light5);
+    }
+    &-disabled {
+      color: var(--yun-color-text-disabled) !important;
+      cursor: not-allowed;
+      &:hover {
+        color: var(--yun-color-text-disabled) !important;
+        background-color: #fff;
+        cursor: not-allowed;
+      }
+    }
+    &-divided {
+      border-top: 1px solid #e8eaec;
+    }
+    > .yun-iconfont {
+      position: relative;
+      margin-right: 4px;
+    }
+    .yun-icon-right {
+      position: relative;
+      right: -6px;
+    }
+  }
+}

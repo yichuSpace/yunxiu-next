@@ -36,6 +36,11 @@ import YunMenu from './components/menu'
 import YunMenuItem from './components/menu-item'
 import YunMenuItemGroup from './components/menu-item-group'
 import YunSubmenu from './components/submenu'
+import YunBreadcrumb from './components/breadcrumb'
+import YunBreadcrumbItem from './components/breadcrumb-item'
+import YunDropdown from './components/dropdown'
+import YunDropdownItem from './components/dropdown-item'
+import YunDropdownMenu from './components/dropdown-menu'
 
 import Notice from './components/notice'
 import Message from './components/message'
@@ -95,8 +100,14 @@ const components = [
   YunMenuItem,
   YunMenuItemGroup,
   YunSubmenu,
+  YunBreadcrumb,
+  YunBreadcrumbItem,
+  YunDropdown,
+  YunDropdownItem,
+  YunDropdownMenu,
   YunSpace,
 ]
+
 const plugins = [Message, Notice]
 
 const defaultInstallOpt = {
@@ -109,12 +120,14 @@ const install = function(app, options = {}) {
   plugins.forEach(plugin => {
     app.use(plugin)
   })
+
   // 注册全局指令
   app.directive('Waves', Waves)
   app.directive('ClickAnimation', ClickAnimation)
   app.directive('ClickOutside', ClickOutside)
   app.directive('NoData', NoData)
   app.directive('Loading', Loading)
+
   // 注册全局函数和属性
   app.config.globalProperties.$global = { ...defaultInstallOpt, ...options }
   setConfig({ ...defaultInstallOpt, ...options })
@@ -164,6 +177,11 @@ export {
   YunMenuItem,
   YunMenuItemGroup,
   YunSubmenu,
+  YunBreadcrumb,
+  YunBreadcrumbItem,
+  YunDropdown,
+  YunDropdownItem,
+  YunDropdownMenu,
   Notice,
   Utils,
 }

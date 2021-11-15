@@ -268,17 +268,6 @@
       "desc": "视图",
       "items": [
         {
-          "desc": "Loading 加载",
-          "icon": "loading2",
-          "name": "loading",
-          "path": "/loading"
-        }
-      ]
-    },
-    {
-      "desc": "视图",
-      "items": [
-        {
           "desc": "Card 卡片",
           "icon": "creditcard",
           "name": "card",
