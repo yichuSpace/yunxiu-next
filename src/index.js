@@ -51,6 +51,7 @@ import YunColorPicker from './components/color-picker'
 import YunRate from './components/rate'
 import YunSlider from './components/slider'
 import YunUpload from './components/upload'
+import YunProgress from './components/progress'
 
 import Notice from './components/notice'
 import Message from './components/message'
@@ -126,6 +127,7 @@ const components = [
   YunRate,
   YunSlider,
   YunUpload,
+  YunProgress,
 ]
 
 const plugins = [Message, Notice]
@@ -212,6 +214,7 @@ export {
   YunRate,
   YunSlider,
   YunUpload,
+  YunProgress,
   Notice,
   Utils,
 }
