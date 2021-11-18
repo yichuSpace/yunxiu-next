@@ -52,6 +52,8 @@ import YunRate from './components/rate'
 import YunSlider from './components/slider'
 import YunUpload from './components/upload'
 import YunProgress from './components/progress'
+import YunTree from './components/tree'
+import YunBigTree from './components/big-tree'
 
 import Notice from './components/notice'
 import Message from './components/message'
@@ -128,6 +130,8 @@ const components = [
   YunSlider,
   YunUpload,
   YunProgress,
+  YunTree,
+  YunBigTree,
 ]
 
 const plugins = [Message, Notice]
@@ -215,6 +219,8 @@ export {
   YunSlider,
   YunUpload,
   YunProgress,
+  YunTree,
+  YunBigTree,
   Notice,
   Utils,
 }

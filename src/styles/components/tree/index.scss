@@ -1,0 +1,218 @@
+.yun-tree {
+  position: relative;
+  font-size: var(--yun-base-font-size);
+  color: var(--yun-color-text-default);
+  &-wrapper {
+    margin-right: 4px;
+    margin-left: 4px;
+  }
+  ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    &.yun-dropdown-menu {
+      padding: 0;
+    }
+    li {
+      display: flex;
+      flex-direction: column;
+      list-style: none;
+      padding: 0;
+      outline: none;
+      margin: 0;
+      &.yun-dropdown-item {
+        margin: 0;
+        padding: 7px 16px;
+        white-space: nowrap;
+      }
+    }
+  }
+  .yun-tree-node-children {
+    padding-left: 16px;
+  }
+
+  &-node {
+    display: flex;
+    align-items: flex-start;
+    padding: 0 0 4px 0;
+    white-space: nowrap;
+    &.is-drop-inner {
+      > .yun-tree-title,
+      > .yun-tree-render-title {
+        background-color: var(--yun-color-primary);
+        color: #fff;
+      }
+    }
+  }
+  &.is-dragging {
+    .yun-tree-title,
+    .yun-tree-render-title {
+      transition: none;
+    }
+  }
+  &-title {
+    width: auto;
+    min-width: calc(100% - 24px);
+    margin: 0;
+    padding: 0 6px;
+    line-height: 24px;
+    cursor: pointer;
+    transition: background-color var(--yun-animation-duration-base) ease-in-out;
+    span {
+      color: var(--yun-color-danger);
+    }
+    &:hover {
+      background-color: var(--yun-color-info-light6);
+    }
+    &.is-selected,
+    &.is-selected:hover {
+      background-color: var(--yun-color-primary-light4);
+    }
+    &.is-ellipsis {
+      min-width: calc(100% - 24px);
+      width: calc(100% - 24px);
+      &.has-checkbox {
+        min-width: calc(100% - 44px);
+        width: calc(100% - 44px);
+      }
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    > i:first-child {
+      margin-right: 4px;
+    }
+  }
+
+  &-render-title {
+    width: auto;
+    min-width: calc(100% - 24px);
+    margin: 0;
+    padding: 0 6px;
+    line-height: 24px;
+    cursor: pointer;
+    transition: background-color var(--yun-animation-duration-base) ease-in-out;
+    &:hover {
+      background-color: var(--yun-color-info-light6);
+    }
+    &.is-selected,
+    &.is-selected:hover {
+      background-color: var(--yun-color-primary-light4);
+    }
+    &.is-ellipsis {
+      min-width: calc(100% - 24px);
+      width: calc(100% - 24px);
+      &.has-checkbox {
+        min-width: calc(100% - 44px);
+        width: calc(100% - 44px);
+      }
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+  }
+  &-arrow {
+    flex-shrink: 0;
+    width: 24px;
+    height: 24px;
+    line-height: 24px;
+    text-align: center;
+    .b-icon-caret-right {
+      cursor: pointer;
+      position: relative;
+      top: -1px;
+      transition: transform var(--yun-animation-duration-base) ease-in-out;
+      color: var(--yun-color-text-default);
+      font-size: 12px;
+      vertical-align: middle;
+    }
+    .b-icon-loading {
+      position: relative;
+      top: -1px;
+      transition: transform var(--yun-animation-duration-base) ease-in-out;
+      font-size: 14px;
+      vertical-align: middle;
+      color: var(--yun-color-primary);
+    }
+    &-open {
+      .b-icon-caret-right {
+        transform: rotateZ(90deg) translateZ(0);
+      }
+    }
+    &-disabled {
+      cursor: not-allowed;
+    }
+    &-noop {
+      cursor: default;
+    }
+  }
+  .yun-checkbox {
+    margin-right: 4px;
+    line-height: var(--yun-base-line-height);
+    vertical-align: baseline;
+  }
+  &-phantom {
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    z-index: -1;
+  }
+
+  &-content {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    min-height: 100px;
+  }
+}
+
+.yun-tree__drop-indicator {
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background-color: var(--yun-color-primary);
+}
+.b-icon-loading {
+  animation: rotating 2s linear infinite;
+}
+
+@keyframes rotating {
+  0% {
+    transform: rotateZ(0deg);
+  }
+  100% {
+    transform: rotateZ(360deg);
+  }
+}
+
+// 树选择
+.yun-tree-select__popper {
+  &.yun-popper {
+    width: inherit;
+    min-width: 10px;
+    overflow: auto;
+    padding: 5px 0 2px;
+    background-color: var(--yun-color-white);
+    box-sizing: border-box;
+    border-radius: var(--yun-border-base-radius);
+    box-shadow: var(--yun-shadow-down);
+    position: absolute;
+    z-index: 900;
+    &.is-light {
+      border: none;
+    }
+    .yun-tree-title {
+      display: inline-block;
+      width: 100%;
+    }
+    .yun-tree-select-inner {
+      padding: 0 4px;
+    }
+  }
+  .yun-tree-select-panel__wrap {
+    max-height: 220px;
+  }
+}
