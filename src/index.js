@@ -56,6 +56,7 @@ import YunTree from './components/tree'
 import YunBigTree from './components/big-tree'
 import YunDesc from './components/desc'
 import YunDescItem from './components/desc-item'
+import YunCircle from './components/circle'
 
 import Notice from './components/notice'
 import Message from './components/message'
@@ -136,6 +137,7 @@ const components = [
   YunBigTree,
   YunDesc,
   YunDescItem,
+  YunCircle,
 ]
 
 const plugins = [Message, Notice]
@@ -227,6 +229,7 @@ export {
   YunBigTree,
   YunDesc,
   YunDescItem,
+  YunCircle,
   Notice,
   Utils,
 }
