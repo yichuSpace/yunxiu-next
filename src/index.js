@@ -58,6 +58,7 @@ import YunDesc from './components/desc'
 import YunDescItem from './components/desc-item'
 import YunCircle from './components/circle'
 import YunCard from './components/card'
+import YunBadge from './components/badge'
 
 import Notice from './components/notice'
 import Message from './components/message'
@@ -140,6 +141,7 @@ const components = [
   YunDescItem,
   YunCircle,
   YunCard,
+  YunBadge,
 ]
 
 const plugins = [Message, Notice]
@@ -233,6 +235,7 @@ export {
   YunDescItem,
   YunCircle,
   YunCard,
+  YunBadge,
   Notice,
   Utils,
 }
