@@ -68,6 +68,8 @@ import YunSkeletonItem from './components/skeleton-item'
 import YunModal from './components/modal'
 import YunDrawer from './components/drawer'
 import YunCalendar from './components/calendar'
+import YunCarousel from './components/carousel'
+import YunCarouselItem from './components/carousel-item'
 
 import LoadingBar from './components/loading-bar'
 import Notice from './components/notice'
@@ -162,6 +164,8 @@ const components = [
   YunModal,
   YunDrawer,
   YunCalendar,
+  YunCarousel,
+  YunCarouselItem,
 ]
 
 const plugins = [Message, Notice, LoadingBar, MessageBox]
@@ -264,6 +268,8 @@ export {
   YunModal,
   YunDrawer,
   YunCalendar,
+  YunCarousel,
+  YunCarouselItem,
   LoadingBar,
   Notice,
   Utils,

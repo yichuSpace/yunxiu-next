@@ -1,0 +1,180 @@
+.yun-carousel {
+  position: relative;
+  .yun-carousel__container {
+    position: relative;
+    height: 200px;
+  }
+  .yun-carousel__arrow {
+    border: none;
+    outline: 0;
+    padding: 0;
+    margin: 0;
+    height: 36px;
+    width: 36px;
+    cursor: pointer;
+    -webkit-transition: 0.3s;
+    transition: 0.3s;
+    border-radius: 50%;
+    background-color: rgba(31, 45, 61, 0.11);
+    color: #fff;
+    position: absolute;
+    top: 50%;
+    z-index: 10;
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
+    text-align: center;
+    font-size: 12px;
+  }
+  .yun-carousel__arrow--left {
+    left: 16px;
+  }
+  .yun-carousel__arrow--right {
+    right: 16px;
+  }
+  .yun-carousel__arrow:hover {
+    background-color: rgba(31, 45, 61, 0.23);
+  }
+  .yun-carousel__arrow i {
+    cursor: pointer;
+  }
+  .yun-carousel__indicators {
+    position: absolute;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    z-index: 2;
+  }
+  .yun-carousel__indicators--horizontal {
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  .yun-carousel__indicators--vertical {
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  .yun-carousel__indicators--outside {
+    bottom: 26px;
+    text-align: center;
+    position: static;
+    -webkit-transform: none;
+    transform: none;
+  }
+  .yun-carousel__indicators--outside .yun-carousel__indicator:hover button {
+    opacity: 0.64;
+  }
+  .yun-carousel__indicators--outside button {
+    background-color: #c0c4cc;
+    opacity: 0.24;
+  }
+  .yun-carousel__indicators--labels {
+    left: 0;
+    right: 0;
+    -webkit-transform: none;
+    transform: none;
+    text-align: center;
+  }
+  .yun-carousel__indicators--labels .yun-carousel__button {
+    height: auto;
+    width: auto;
+    padding: 2px 18px;
+    font-size: 12px;
+  }
+  .yun-carousel__indicators--labels .yun-carousel__indicator {
+    padding: 6px 4px;
+  }
+  .yun-carousel__indicator {
+    background-color: transparent;
+    cursor: pointer;
+    margin: 0;
+    list-style: none;
+  }
+  .yun-carousel__indicator:hover button {
+    opacity: 0.72;
+  }
+  .yun-carousel__indicator--horizontal {
+    display: inline-block;
+    padding: 12px 4px;
+  }
+  .yun-carousel__indicator--vertical {
+    padding: 4px 12px;
+  }
+  .yun-carousel__indicator--vertical .yun-carousel__button {
+    width: 2px;
+    height: 15px;
+  }
+  .yun-carousel__indicator.is-active button {
+    opacity: 1;
+  }
+  .yun-carousel__button {
+    display: block;
+    opacity: 0.48;
+    width: 30px;
+    height: 2px;
+    background-color: #fff;
+    border: none;
+    outline: 0;
+    padding: 0;
+    margin: 0;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+  .carousel-arrow-left-enter,
+  .carousel-arrow-left-leave-active {
+    transform: translateY(-50%) translateX(-10px);
+    opacity: 0;
+  }
+  .carousel-arrow-right-enter,
+  .carousel-arrow-right-leave-active {
+    transform: translateY(-50%) translateX(10px);
+    opacity: 0;
+  }
+}
+.yun-carousel--horizontal {
+  overflow-x: hidden;
+}
+.yun-carousel--vertical {
+  overflow-y: hidden;
+}
+.yun-carousel__item,
+.yun-carousel__mask {
+  position: absolute;
+  height: 100%;
+  top: 0;
+  left: 0;
+}
+.yun-carousel__item {
+  width: 100%;
+  display: inline-block;
+  overflow: hidden;
+  z-index: 0;
+}
+.yun-carousel__item.is-active {
+  z-index: 2;
+}
+.yun-carousel__item.is-animating {
+  transition: transform 0.4s ease-in-out;
+}
+.yun-carousel__item--card {
+  width: 50%;
+  transition: transform 0.4s ease-in-out;
+}
+.yun-carousel__item--card.is-in-stage {
+  cursor: pointer;
+  z-index: 1;
+}
+.yun-carousel__item--card.is-in-stage.is-hover .yun-carousel__mask,
+.yun-carousel__item--card.is-in-stage:hover .yun-carousel__mask {
+  opacity: 0.12;
+}
+.yun-carousel__item--card.is-active {
+  z-index: 2;
+}
+.yun-carousel__mask {
+  width: 100%;
+  background-color: #fff;
+  opacity: 0.24;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+}
