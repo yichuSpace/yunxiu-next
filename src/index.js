@@ -69,6 +69,7 @@ import YunModal from './components/modal'
 import LoadingBar from './components/loading-bar'
 import Notice from './components/notice'
 import Message from './components/message'
+import MessageBox from './components/message-box'
 
 import * as util from './utils/util'
 import { setConfig } from './utils/config'
@@ -157,7 +158,7 @@ const components = [
   YunModal,
 ]
 
-const plugins = [Message, Notice, LoadingBar]
+const plugins = [Message, Notice, LoadingBar, MessageBox]
 
 const defaultInstallOpt = {
   zIndex: 2000,
@@ -190,7 +191,6 @@ export {
   YunButton,
   YunIcon,
   YunAlert,
-  Message,
   YunCountTo,
   YunInput,
   YunInputNumber,
@@ -258,6 +258,8 @@ export {
   LoadingBar,
   Notice,
   Utils,
+  Message,
+  MessageBox,
 }
 
 export default {

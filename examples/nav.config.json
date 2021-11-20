@@ -353,8 +353,8 @@
         {
           "desc": "MessageBox 弹框",
           "icon": "mail",
-          "name": "messageBox",
-          "path": "/messageBox"
+          "name": "message-box",
+          "path": "/message-box"
         },
         {
           "desc": "Tooltip 提示",
