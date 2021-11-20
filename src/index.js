@@ -62,6 +62,8 @@ import YunBadge from './components/badge'
 import YunCollapse from './components/collapse'
 import YunCollapsePanel from './components/collapse-panel'
 import YunSplit from './components/split'
+import YunSkeleton from './components/skeleton'
+import YunSkeletonItem from './components/skeleton-item'
 
 import Notice from './components/notice'
 import Message from './components/message'
@@ -148,6 +150,8 @@ const components = [
   YunCollapse,
   YunCollapsePanel,
   YunSplit,
+  YunSkeleton,
+  YunSkeletonItem,
 ]
 
 const plugins = [Message, Notice]
@@ -245,6 +249,8 @@ export {
   YunCollapse,
   YunCollapsePanel,
   YunSplit,
+  YunSkeleton,
+  YunSkeletonItem,
   Notice,
   Utils,
 }
