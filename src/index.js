@@ -1,4 +1,5 @@
 import YunButton from './components/button'
+import YunButtonGroup from './components/button-group'
 import YunIcon from './components/icon'
 import YunAlert from './components/alert'
 import YunCountTo from './components/countTo'
@@ -91,6 +92,7 @@ const Utils = {
 
 const components = [
   YunButton,
+  YunButtonGroup,
   YunIcon,
   YunAlert,
   YunCountTo,
@@ -191,6 +193,7 @@ const install = function(app, options = {}) {
 
 export {
   YunButton,
+  YunButtonGroup,
   YunIcon,
   YunAlert,
   YunCountTo,
