@@ -5,17 +5,17 @@ export default function(context) {
   const getStyle = (dom, attr) => {
     return getComputedStyle(dom)[attr]
   }
-  const drag = (wrap) => {
+  const drag = wrap => {
     if (!wrap) return
     wrap.setAttribute('data-drag', unref(context.draggable))
-    const dialogHeaderEl = wrap.querySelector('.bin-modal-header')
+    const dialogHeaderEl = wrap.querySelector('.yun-modal-header')
     const dragDom = wrap
 
     if (!dialogHeaderEl || !dragDom || !unref(context.draggable)) return
 
     dialogHeaderEl.style.cursor = 'move'
 
-    dialogHeaderEl.onmousedown = (e) => {
+    dialogHeaderEl.onmousedown = e => {
       if (!e) return
       // 鼠标按下，计算当前元素距离可视区的距离
       const disX = e.clientX
@@ -76,7 +76,7 @@ export default function(context) {
   }
 
   const handleDrag = () => {
-    const dragWraps = document.querySelectorAll('.bin-modal-wrap')
+    const dragWraps = document.querySelectorAll('.yun-modal-wrap')
     for (const wrap of Array.from(dragWraps)) {
       if (!wrap) continue
       const display = getStyle(wrap.parentElement, 'display')

@@ -25,7 +25,7 @@
 <script>
 import YunProgress from '../progress/progress.vue'
 
-const prefixCls = 'bin-upload'
+const prefixCls = 'yun-upload'
 
 export default {
   name: 'UploadList',

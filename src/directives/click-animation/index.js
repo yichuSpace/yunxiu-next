@@ -30,10 +30,10 @@ const ClickAnimation = {
           getComputedStyle(node).getPropertyValue('background-color')
         if (node) {
           node.style.position = 'relative'
-          let ripple = node.querySelector('.bin-click-animating-node')
+          let ripple = node.querySelector('.yun-click-animating-node')
           resetEffect(ripple)
           ripple = document.createElement('span')
-          ripple.className = 'bin-click-animating-node'
+          ripple.className = 'yun-click-animating-node'
           node.appendChild(ripple)
           // 设置颜色
           styleForPesudo = styleForPesudo || document.createElement('style')
@@ -44,8 +44,8 @@ const ClickAnimation = {
             waveColor !== 'transparent'
           ) {
             styleForPesudo.innerHTML = `
-            .bin-click-animating-node {
-              --bin-wave-shadow-color: ${waveColor};
+            .yun-click-animating-node {
+              --yun-wave-shadow-color: ${waveColor};
             }`
             if (!document.body.contains(styleForPesudo)) {
               document.body.appendChild(styleForPesudo)

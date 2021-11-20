@@ -1,5 +1,5 @@
 <template>
-  <div id="app" ref="scrollBox">
+  <div ref="scrollBox">
     <main-header />
     <div class="main-container">
       <side-nav class="nav" />
