@@ -65,6 +65,7 @@ import YunSplit from './components/split'
 import YunSkeleton from './components/skeleton'
 import YunSkeletonItem from './components/skeleton-item'
 import YunModal from './components/modal'
+import YunDrawer from './components/drawer'
 
 import LoadingBar from './components/loading-bar'
 import Notice from './components/notice'
@@ -156,6 +157,7 @@ const components = [
   YunSkeleton,
   YunSkeletonItem,
   YunModal,
+  YunDrawer,
 ]
 
 const plugins = [Message, Notice, LoadingBar, MessageBox]
@@ -255,6 +257,7 @@ export {
   YunSkeleton,
   YunSkeletonItem,
   YunModal,
+  YunDrawer,
   LoadingBar,
   Notice,
   Utils,
