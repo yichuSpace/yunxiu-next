@@ -1,0 +1,31 @@
+.yun-loading-bar {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 2000;
+  &-inner {
+    transition: width var(--yun-animation-duration-base) linear;
+    &-color-primary {
+      background-color: var(--yun-color-primary);
+    }
+    &-failed-color-error {
+      background-color: var(--yun-color-danger);
+    }
+  }
+  .icon {
+    position: absolute;
+    right: 5px;
+    top: 5px;
+    &.icon-color-primary i {
+      color: var(--yun-color-primary);
+    }
+    &.icon-failed-color-error i {
+      color: var(--yun-color-danger);
+    }
+    i {
+      font-size: 16px;
+    }
+  }
+}

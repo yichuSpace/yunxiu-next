@@ -64,6 +64,7 @@ import YunCollapsePanel from './components/collapse-panel'
 import YunSplit from './components/split'
 import YunSkeleton from './components/skeleton'
 import YunSkeletonItem from './components/skeleton-item'
+import LoadingBar from './components/loading-bar'
 
 import Notice from './components/notice'
 import Message from './components/message'
@@ -154,7 +155,7 @@ const components = [
   YunSkeletonItem,
 ]
 
-const plugins = [Message, Notice]
+const plugins = [Message, Notice, LoadingBar]
 
 const defaultInstallOpt = {
   zIndex: 2000,
@@ -251,6 +252,7 @@ export {
   YunSplit,
   YunSkeleton,
   YunSkeletonItem,
+  LoadingBar,
   Notice,
   Utils,
 }
