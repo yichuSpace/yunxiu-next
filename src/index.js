@@ -61,6 +61,7 @@ import YunCard from './components/card'
 import YunBadge from './components/badge'
 import YunCollapse from './components/collapse'
 import YunCollapsePanel from './components/collapse-panel'
+import YunSplit from './components/split'
 
 import Notice from './components/notice'
 import Message from './components/message'
@@ -146,6 +147,7 @@ const components = [
   YunBadge,
   YunCollapse,
   YunCollapsePanel,
+  YunSplit,
 ]
 
 const plugins = [Message, Notice]
@@ -242,6 +244,7 @@ export {
   YunBadge,
   YunCollapse,
   YunCollapsePanel,
+  YunSplit,
   Notice,
   Utils,
 }
