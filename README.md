@@ -2,7 +2,7 @@
 
 Hi! 首先感谢你使用 Yunxiu-next。
 
-Yunxiu-next 是一套基于 Vue 3.0 开发的开源组件库，旨在快速搭建页面。
+Yunxiu-next 是一套基于 Vue 3.x 开发的开源组件库，旨在快速搭建页面。
 
 ## 文档
 
@@ -10,49 +10,85 @@ Yunxiu-next 是一套基于 Vue 3.0 开发的开源组件库，旨在快速搭�
 
 [国内加速镜像站点](https://gitee.com/yichu-gitee/yunxiu-next)
 
-加入我们的纷争，开始与每个人沟通。
+## 安装
 
-## Pull Request 规范
-
-- 请先 fork 一份到自己的项目下，不要直接在仓库下建分支。
-
-- commit 信息要以`[组件名]: 描述信息` 的形式填写，例如 `Button: fix xxx bug`。
-
-- **不要提交** `lib` 里面打包的文件。
-
-- 执行 `npm run build` 后可以正确打包文件。
-
-- 提交 PR 前请 rebase，确保 commit 记录的整洁。
-
-- 确保 PR 是提交到 `dev` 分支，而不是 `master` 分支。
-
-- 如果是修复 bug，请在 PR 中给出描述信息。
-
-- 合并代码需要两名维护人员参与：一人进行 review 后 approve，另一人再次 review，通过后即可合并。
-
-## 开发环境搭建
-
-首先你需要 Node.js 4+，yarn 和 npm 3+。注意：我们使用 yarn 进行依赖版本的锁定，所以请不要使用 `npm install` 安装依赖。
+推荐使用 `npm` 或 `yarn` 进行安装，它能更好地和 `webpack` 打包工具配合使用。而且可以更好的和 `es6` `typescript` 配合使用。并且支持按需引入
 
 ```shell
-git clone https://github.com/yichuSpace/yunxiu-next.git
-npm run dev
-
-# open http://localhost:8088
+npm i yunxiu-next -S
+# or
+yarn add yunxiu-next
 ```
 
-打包代码：
+## 快速上手
 
-```shell
-npm run build
+### 引入
+
+你可以引入整个 yunxiu-next，或是根据需要仅引入部分组件。我们先介绍如何引入完整的 yunxiu-next。
+
+#### 完整引入
+
+在 main.js 中写入以下内容：
+
+```javascript
+import { createApp } from 'vue'
+import YunxiuNext from 'yunxiu-next'
+import App from './App.vue'
+import 'yunxiu-next/lib/styles/index.css'
+
+const app = createApp(App)
+app.use(YunxiuNext)
+// app.use(YunxiuNext,{disabledDoc:true}) // 可以设置禁用doc地址log
+app.mount('#app')
 ```
 
-## 组件开发规范
+以上代码便完成了 yunxiu-next 的引入。需要注意的是，样式文件需要单独引入。
 
-- 通过 `plop` 创建组件目录结构，包含测试代码、入口文件、文档
-- 如果包含父子组件，需要更改目录结构，参考 `Button`
-- 组件内如果依赖了其他组件，需要在当前组件内引入，参考 `Select`
+#### 按需引入
 
-## 代码规范
+借助插件 [babel-plugin-import](https://github.com/ant-design/babel-plugin-import)我们可以只引入需要的组件，以达到减小项目体积的目的
 
-遵循饿了么前端的 [ESLint](https://github.com/ElemeFE/eslint-config-elemefe) 即可
+```shell script
+npm install babel-plugin-import --save-dev
+```
+
+然后，将 .babelrc 或 babel.config.js 修改为：
+
+```javascript
+module.exports = {
+  presets: [
+    [
+      '@vue/app',
+      {
+        useBuiltIns: 'entry',
+      },
+    ],
+  ],
+  plugins: [
+    [
+      'import',
+      {
+        libraryName: 'yunxiu-next',
+        libraryDirectory: 'src/components',
+      },
+    ],
+  ],
+}
+```
+
+如果你只希望引入部分组件，比如 Button 和 Icon，那么需要在 main.js 中写入以下内容
+
+```javascript
+import { createApp } from 'vue'
+import { YunButton } from 'yunxiu-next'
+import App from './App.vue'
+import 'yunxiu-next/lib/styles/components/button.css'
+
+const app = createApp(App)
+app.use(YunButton)
+app.mount('#app')
+```
+
+**特别提醒:按需引用仍然需要导入样式，即在 main.js 或根组件 import 'yunxiu-next/lib/styles/index.css';**
+
+完整组件列表参考源代码
