@@ -1,3 +1,5 @@
+@use "sass:math";
+
 @import '../../common/variables.scss';
 
 .yun-input-number {
@@ -260,7 +262,7 @@
     vertical-align: top;
   }
   .yun-input-number-handler {
-    height: $small-height / 2;
+    height: math.div($small-height, 2);
   }
   .yun-input-number-input-wrap {
     height: $small-height;
@@ -289,7 +291,7 @@
     font-size: $header-font-size;
   }
   .yun-input-number-handler {
-    height: $large-height / 2;
+    height: math.div($large-height, 2);
   }
   .yun-input-number-input-wrap {
     height: $large-height;

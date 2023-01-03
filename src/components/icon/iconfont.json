@@ -1,8 +1,8 @@
 {
   "id": "2344785",
   "name": "yunxiu-next",
-  "font_family": "b-iconfont",
-  "css_prefix_text": "b-icon-",
+  "font_family": "yun-iconfont",
+  "css_prefix_text": "yun-icon-",
   "description": "",
   "glyphs": [
     {
