@@ -7,6 +7,7 @@ importers:
       '@yunxiu-next/components': workspace:*
       '@yunxiu-next/theme-chalk': workspace:*
       '@yunxiu-next/utils': workspace:*
+      sass: ^1.57.1
       typescript: ^4.9.4
       unplugin-vue-define-options: ^1.1.4
       vue: ^3.2.45
@@ -15,6 +16,7 @@ importers:
       '@yunxiu-next/theme-chalk': link:packages/theme-chalk
       '@yunxiu-next/utils': link:packages/utils
     devDependencies:
+      sass: 1.57.1
       typescript: 4.9.4
       unplugin-vue-define-options: 1.1.4_vue@3.2.45
       vue: 3.2.45
@@ -30,12 +32,14 @@ importers:
 
   play:
     specifiers:
+      '@vicons/ionicons5': ^0.12.0
       '@vitejs/plugin-vue': ^4.0.0
       typescript: ^4.9.3
       vite: ^4.0.0
       vue: ^3.2.45
       vue-tsc: ^1.0.11
     dependencies:
+      '@vicons/ionicons5': 0.12.0
       vue: 3.2.45
     devDependencies:
       '@vitejs/plugin-vue': 4.0.0_vite@4.0.4+vue@3.2.45
@@ -287,6 +291,10 @@ packages:
   /@types/estree/1.0.0:
     resolution: {integrity: sha512-WulqXMDUTYAXCjZnk6JtIHPigp55cVtDgDrO2gHRwhyJto21+1zbVCtOYB2L1F9w4qCQ0rOGWBnBe0FNTiEJIQ==}
     dev: true
+
+  /@vicons/ionicons5/0.12.0:
+    resolution: {integrity: sha512-Iy1EUVRpX0WWxeu1VIReR1zsZLMc4fqpt223czR+Rpnrwu7pt46nbnC2ycO7ItI/uqDLJxnbcMC7FujKs9IfFA==}
+    dev: false
 
   /@vitejs/plugin-vue/4.0.0_vite@4.0.4+vue@3.2.45:
     resolution: {integrity: sha512-e0X4jErIxAB5oLtDqbHvHpJe/uWNkdpYV83AOG2xo2tEVSzCzewgJMtREZM30wXnM5ls90hxiOtAuVU6H5JgbA==}
@@ -565,6 +573,10 @@ packages:
     hasBin: true
     dev: true
 
+  /immutable/4.2.2:
+    resolution: {integrity: sha512-fTMKDwtbvO5tldky9QZ2fMX7slR0mYpY5nbnFWYp0fOzDhHqhgIw9KoYgxLWsoNTS9ZHGauHj18DTyEw6BK3Og==}
+    dev: true
+
   /is-binary-path/2.1.0:
     resolution: {integrity: sha512-ZMERYes6pDydyuGidse7OsHxtbI7WVeUEozgR/g7rd0xUimYNlvZRE/K2MgZTjWy725IfelLeVcEM97mmtRGXw==}
     engines: {node: '>=8'}
@@ -672,6 +684,16 @@ packages:
     hasBin: true
     optionalDependencies:
       fsevents: 2.3.2
+    dev: true
+
+  /sass/1.57.1:
+    resolution: {integrity: sha512-O2+LwLS79op7GI0xZ8fqzF7X2m/m8WFfI02dHOdsK5R2ECeS5F62zrwg/relM1rjSLy7Vd/DiMNIvPrQGsA0jw==}
+    engines: {node: '>=12.0.0'}
+    hasBin: true
+    dependencies:
+      chokidar: 3.5.3
+      immutable: 4.2.2
+      source-map-js: 1.0.2
     dev: true
 
   /source-map-js/1.0.2:

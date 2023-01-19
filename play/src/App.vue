@@ -1,8 +1,9 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import { CashOutline } from "@vicons/ionicons5";
+</script>
 
 <template>
   <div>
-    asdf
-    <yun-icon color="#333"></yun-icon>
+    <yun-icon color="#333"> <CashOutline></CashOutline> </yun-icon>
   </div>
 </template>

@@ -1,0 +1,13 @@
+@use 'mixins/mixins.scss' as *;
+
+@include b(icon) {
+  height: 1em;
+  width: 1em;
+  line-height: 1em;
+  display: inline-block;
+  vertical-align: middle;
+  svg {
+    height: 1em;
+    width: 1em;
+  }
+}
