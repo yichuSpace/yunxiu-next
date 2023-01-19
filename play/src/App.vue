@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { CashOutline } from "@vicons/ionicons5";
+import { CashOutline } from '@vicons/ionicons5'
 </script>
 
 <template>
